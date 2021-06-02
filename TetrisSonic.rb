@@ -1,5 +1,6 @@
 ## Tetris Sonic
 ## Switchのタイトル曲をコピー
+## 原曲 https://www.youtube.com/watch?v=sW8l03pRbNo
 
 use_bpm 65
 
