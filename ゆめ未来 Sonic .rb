@@ -4,7 +4,7 @@
 
 ## part 1
 
-```ruby
+
 use_bpm 70
 drum = "/Users/k_ikemura/Music/sonic_pi/drum_slow"
 
@@ -41,56 +41,55 @@ live_loop :temp do
   end
 end
 
-```
+
 
 ## part 2
-```ruby
-drum = "/Users/k_ikemura/Music/sonic_pi/drum_slow"
 
-cd = :a3
+# drum = "/Users/k_ikemura/Music/sonic_pi/drum_slow"
 
-live_loop :chord, sync: :drum_bd do
-  use_synth :sine
+# cd = :a3
+
+# live_loop :chord, sync: :drum_bd do
+#   use_synth :sine
   
-  with_fx :slicer, phase: 0.375 do
-    play chord(cd, :M7), sustain: 3.8, cutoff: 100, amp: 0.5
-  end
+#   with_fx :slicer, phase: 0.375 do
+#     play chord(cd, :M7), sustain: 3.8, cutoff: 100, amp: 0.5
+#   end
   
-  with_fx :slicer, phase: 0.125 do
-    ##| play chord(cd+7, :M7), sustain: 3.8, cutoff: 100, amp: 0.3
-  end
+#   with_fx :slicer, phase: 0.125 do
+#     ##| play chord(cd+7, :M7), sustain: 3.8, cutoff: 100, amp: 0.3
+#   end
   
-  sleep 4
-end
+#   sleep 4
+# end
 
-live_loop :industry, sync: :drum_bd do
-  ##| sample :loop_industrial, beat_stretch: 1, cutoff: 70, amp: 1
-  sleep 1
-end
+# live_loop :industry, sync: :drum_bd do
+#   ##| sample :loop_industrial, beat_stretch: 1, cutoff: 70, amp: 1
+#   sleep 1
+# end
 
-live_loop :drum_bd do
-  sample :bd_haus, lpf: 10
-  sleep 0.5
-end
+# live_loop :drum_bd do
+#   sample :bd_haus, lpf: 10
+#   sleep 0.5
+# end
 
-live_loop :mero, sync: :drum_bd do
-  with_fx :reverb, room: 0.8 do
-    ##| with_fx :echo do
-    ##| use_random_seed Time.new.usec
-    ##| with_fx :wobble, phase: 8, invert_wave: 1, amp: 2 do
-    with_fx :bitcrusher,amp: 0.4 do
+# live_loop :mero, sync: :drum_bd do
+#   with_fx :reverb, room: 0.8 do
+#     ##| with_fx :echo do
+#     ##| use_random_seed Time.new.usec
+#     ##| with_fx :wobble, phase: 8, invert_wave: 1, amp: 2 do
+#     with_fx :bitcrusher,amp: 0.4 do
       
-      use_synth :prophet
-      ns = (scale cd-12, :major_pentatonic, num_octaves: 2)
-      24.times do
-        tick
-        ##| play ns.choose, detune: (ring 12,-24,-36).choose, release: rrand(0, 0.2), amp: rand + 0.5, cutoff: rrand(70, 120),amp: 1
-        sleep 0.125
-      end
-      ##|     end
-      ##|   end
-    end
-  end
-end
+#       use_synth :prophet
+#       ns = (scale cd-12, :major_pentatonic, num_octaves: 2)
+#       24.times do
+#         tick
+#         ##| play ns.choose, detune: (ring 12,-24,-36).choose, release: rrand(0, 0.2), amp: rand + 0.5, cutoff: rrand(70, 120),amp: 1
+#         sleep 0.125
+#       end
+#       ##|     end
+#       ##|   end
+#     end
+#   end
+# end
 
-```
