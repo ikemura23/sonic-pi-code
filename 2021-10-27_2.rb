@@ -1,3 +1,4 @@
+# output https://twitter.com/ikemura23/status/1453549972499038208
 use_bpm 70
 drum2 = "/Users/k_ikemura/Music/sonic_pi"
 
@@ -64,5 +65,3 @@ live_loop :string, sync: :kick do
   end
   ##| end
 end
-
-# 参考元: https://www.youtube.com/watch?v=Qzo0mpTmHzY

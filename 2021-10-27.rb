@@ -1,3 +1,4 @@
+# output https://twitter.com/ikemura23/status/1453302072653369352
 use_bpm 75
 drum = "/Users/k_ikemura/Music/sonic_pi/LCA_drum loops"
 drum2 = "/Users/k_ikemura/Music/sonic_pi"
