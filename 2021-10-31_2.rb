@@ -1,3 +1,5 @@
+# output https://twitter.com/ikemura23/status/1454828635886477319
+
 drum = "/Users/k_ikemura/Music/sonic_pi/LCA_kick_snare loops"
 drum2 = "/Users/k_ikemura/Music/sonic_pi"
 noise = "/Users/k_ikemura/Music/sonic_pi/LCCPTL_GRIME/LCCPTL_fx\ loops"
