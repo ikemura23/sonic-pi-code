@@ -1,3 +1,4 @@
+# output https://twitter.com/ikemura23/status/1455726165310590977
 use_bpm 65
 drum = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_clap\ loops"
 
