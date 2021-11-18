@@ -2,7 +2,8 @@ use_bpm 55 #50 60
 drum = "/Users/k_ikemura/Music/sonic_pi/LCA_drum loops"
 
 live_loop :industry do
-  sample drum, 3, beat_stretch: 8, cutoff: 130, amp: 0.5
+  number = 4 #4 12
+  sample drum, number, beat_stretch: 8, cutoff: 130, amp: 0.5
   sleep 8
 end
 
@@ -22,25 +23,25 @@ live_loop :base do
   
   c = base_cd.tick
   
-  with_fx :bitcrusher do
-    use_synth :saw # :saw :chiplead
-    2.times do
-      sleep 0.25
-      
-      play c, release: 0.25
-      sleep 0.25
-      sleep 0.25
-      play c, release: 0.25
-      sleep 0.25
-      play c, release: 0.125
-      sleep 0.125
-      play c+12, release: 0.25
-      sleep 0.25
-      play c, release: 0.25
-      sleep 0.25
-      sleep 0.375
-    end
+  ##| with_fx :bitcrusher do
+  use_synth :saw # :saw :chiplead
+  2.times do
+    sleep 0.25
+    
+    play c, release: 0.25
+    sleep 0.25
+    sleep 0.25
+    play c, release: 0.25
+    sleep 0.25
+    play c, release: 0.125
+    sleep 0.125
+    play c+12, release: 0.25
+    sleep 0.25
+    play c, release: 0.25
+    sleep 0.25
+    sleep 0.375
   end
+  ##| end
 end
 
 live_loop :pico do
