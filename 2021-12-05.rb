@@ -1,6 +1,4 @@
-##| use_bpm 50
-##| use_random_seed 70000
-
+use_bpm 45
 
 drum = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_drum\ loops\ full"
 
@@ -28,31 +26,30 @@ live_loop :string, sync: :bd do
     2.times do
       note.tick
       c = chord(note.look, cd.look)
-      ci = chord_invert(c, 0)
+      
+      ##| c = [[51, 55, 58, 62], [50, 53, 58, 62]].ring.tick
+      
+      ci = chord_invert(c, 2)
+      
+      
       synth :hollow, note: c, release: 5, attack: 1.5, amp: 5
       synth :sine, note: ci, release: 4, attack: 1.5, cutoff: 90, amp: 1
       sleep 4
     end
   end
-  
-  ##| play [51, 55, 58, 62], sustain: 4,  amp: a
-  ##| sleep 4
-  ##| play [50, 53, 58, 62], sustain: 4,  amp: a
-  ##| sleep 4
 end
 
 base_effect = [0,7].ring
 live_loop :base, sync: :bd do
   base_effect.tick
-  use_synth :tri #:tri
-  ##| 2.times do
-  3.times do
-    synth :tri, note: :ds1+base_effect.look, release: 0.376, sustain: 0,attack_level: 3, amp: 4
-    synth :fm, note: :ds1+base_effect.look+12, release: 0.375, sustain: 0, amp: 1
-    synth :tech_saws, note: :ds1+base_effect.look+12, release: 0.375, sustain: 0, amp: 1
-    sleep 0.375
+  use_synth :tri
+  2.times do
+    3.times do
+      synth :tri, note: :ds1+base_effect.look, release: 0.376, sustain: 0,attack_level: 3, amp: 4
+      ##| synth :fm, note: :ds1+base_effect.look+12, release: 0.375, sustain: 0, amp: 1
+      synth :tech_saws, note: :ds1+base_effect.look+12, release: 0.375, sustain: 0, amp: 1
+      sleep 0.375
+    end
+    sleep 2 - 0.375*3
   end
-  sleep 4 - 0.375*3
-  ##| end
 end
-
