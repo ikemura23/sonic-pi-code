@@ -1,3 +1,4 @@
+#output https://twitter.com/ikemura23/status/1467451481242882049
 use_bpm 45
 
 drum = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_drum\ loops\ full"
