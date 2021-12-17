@@ -1,6 +1,7 @@
-use_bpm 50
+##| use_bpm 50
 
 drum = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_top\ loops"
+clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 live_loop :bd do
   sleep 0.5
@@ -14,6 +15,13 @@ live_loop :cymbal_close, sync: :bd do
   sample :drum_cymbal_closed, amp: 2, attack: 0.02, rate: 3
   sleep 0.125
 end
+
+live_loop :clap, sync: :bd do
+  sleep 0.5
+  sample clap, 1, amp: 0.8
+  sleep 0.5
+end
+
 
 live_loop :drum, sync: :bd do
   ##| sample drum, 7, beat_stretch: 4, amp: 1.5
@@ -57,22 +65,22 @@ end
 
 ##|   2.times do
 ##|     c = cd.tick
-##|     with_fx :distortion, distort: 0.5, amp: 1 do
-##|       sleep 0.25
-##|       sleep 0.125
+##|     ##| with_fx :distortion, distort: 0.5, amp: 1 do
+##|     sleep 0.25
+##|     sleep 0.125
 
-##|       synth sy1, note: c, sustain: 0.125, release: 0
-##|       synth sy2, note: c-12, sustain: 0.125, release: 0, amp: 0.4
-##|       sleep 0.125
+##|     synth sy1, note: c, sustain: 0.125, release: 0
+##|     synth sy2, note: c-12, sustain: 0.125, release: 0, amp: 0.2
+##|     sleep 0.125
 
-##|       c = cd.tick
-##|       sleep 0.25
+##|     c = cd.tick
+##|     sleep 0.25
 
-##|       synth sy1, note: c, sustain: 0.125, release: 0
-##|       synth sy2, note: c-12, sustain: 0.125, release: 0, amp: 0.4
-##|       sleep 0.125
+##|     synth sy1, note: c, sustain: 0.125, release: 0
+##|     synth sy2, note: c-12, sustain: 0.125, release: 0, amp: 0.2
+##|     sleep 0.125
 
-##|       sleep 1-0.25*2-0.125*3
-##|     end
+##|     sleep 1-0.25*2-0.125*3
+##|     ##| end
 ##|   end
 ##| end
