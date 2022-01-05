@@ -1,4 +1,4 @@
-
+# output https://twitter.com/ikemura23/status/1478878557166522369
 kick_snare = "/Users/k_ikemura/Music/sonic_pi/LCA_kick_snare\ loops"
 drum = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_drum\ loops\ full"
 
