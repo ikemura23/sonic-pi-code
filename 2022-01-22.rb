@@ -1,3 +1,4 @@
+#output https://twitter.com/ikemura23/status/1484701538660814849
 use_bpm 70
 drum = "/Users/k_ikemura/Music/sonic_pi/LCHZ_UK_DRILL/LCHZ_drum\ loops/LCHZ_drum\ loops\ full"
 
