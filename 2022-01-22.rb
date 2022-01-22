@@ -15,15 +15,15 @@ live_loop :cymbal_close, sync: :bd do
 end
 
 live_loop :drum, sync: :bd do
-  ##| sample drum, 6, beat_stretch: 8, amp: 1.5 #,hpf: 80
+  ##| sample drum, 6, beat_stretch: 8, amp: 1.5
   sleep 8
 end
 
 base_cd = [:D1, :E1].ring
 
 live_loop :tech_saws, sync: :bd do
-  synth :chiplead, note: base_cd.tick, sustain: 4, release: 0, cutoff: 120, amp: 0.1
-  synth :fm, note: base_cd.look+12, sustain: 4, release: 0, cutoff: 120, amp: 1.5
+  synth :chiplead, note: base_cd.tick, sustain: 4, release: 0, cutoff: 120, amp: 0.5
+  synth :fm, note: base_cd.look+12, sustain: 4, release: 0, cutoff: 120, amp: 1.6
   sleep 4
 end
 
@@ -38,7 +38,7 @@ live_loop :pico1, sync: :bd do
   use_synth :subpulse #:supersaw
   note = chord_invert(chord(:e4-2, :sus2), 1)
   with_fx :reverb do
-    play note, amp: 1, release: 2, cutoff: 120
+    ##| play note, amp: 1.5, release: 2, cutoff: 110
     sleep 4
   end
 end
