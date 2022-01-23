@@ -3,7 +3,7 @@ clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_cl
 
 live_loop :bd do
   sleep 0.5
-  sample :bd_tek, amp: 2.5
+  ##| sample :bd_tek, amp: 2.5
 end
 
 live_loop :bd2, sync: :bd do
@@ -19,7 +19,7 @@ end
 
 live_loop :clap, sync: :bd do
   sleep 0.5
-  sample clap, 5, amp: 1.5 #5, 1
+  sample clap, 0, amp: 1.5 #5, 0, 1
   sleep 0.5
 end
 
@@ -61,7 +61,7 @@ end
 
 back_effect = [9,7,5,2].ring
 live_loop :back_code, sync: :bd do
-  cd = :c3 + back_effect.tick
+  cd = :c3 + back_effect.first
   invert = [0, 1, -1].choose
   with_fx :flanger, amp: 1 do
     synth :sine, note: chord_invert(chord(cd, :m9), invert), release: 3
@@ -75,7 +75,7 @@ live_loop :pico2, sync: :bd do
   sleep 2
   with_fx :reverb, room: 0.9 do
     with_fx :echo, decay: 3, phase: 0.375 do
-      play :c7, amp: 0.3, release: 0.2
+      ##| play :c7, amp: 0.3, release: 0.2
     end
   end
   sleep 2
