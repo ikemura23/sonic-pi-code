@@ -1,9 +1,14 @@
-use_random_seed 9300
+use_random_seed 9800
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 live_loop :bd do
   sleep 0.5
-  ##| sample :bd_tek, amp: 2.5
+  sample :bd_tek, amp: 2.5
+end
+
+live_loop :splash_hard, sync: :bd do
+  sample :drum_splash_hard, cutoff: 110, amp: 0.8
+  sleep 16
 end
 
 live_loop :bd2, sync: :bd do
@@ -19,7 +24,7 @@ end
 
 live_loop :clap, sync: :bd do
   sleep 0.5
-  sample clap, 0, amp: 1.5 #5, 0, 1
+  sample clap, 2, amp: 1.5 #5, 0, 1
   sleep 0.5
 end
 
@@ -31,42 +36,53 @@ live_loop :cymbal_close, sync: :bd do
   end
 end
 
-live_loop :bass, sync: :bd do
-  use_synth :tri
-  cd = :c1
-  
-  effect = [2,9,7]
-  with_fx :reverb, amp: 2 do
-    with_fx :krush do
-      sleep 0.125
-      play cd, release: 0.2, sustain: 0
-      2.times do
-        play cd, release: 0.2, sustain: 0
-        sleep 0.25
-      end
-      sleep 0.125
-      play cd, release: 0.2, sustain: 0
-      sleep 0.25
-      # 4
-      sleep 0.25
-      play cd, release: 0.2, sustain: 0
-      sleep 0.375
-      3.times do
-        play cd+effect.tick, release: 0.13, sustain: 0
-        sleep 0.125
-      end
+
+
+back_effect = [2,4].ring #9,7,5,4 #9,7,9,7,5,4,5,4  #4,6,2,8 #2,4,8,10
+live_loop :back_code, sync: :bd do
+  cd = :c3 + back_effect.tick
+  invert = [0, 1, -1].choose #0, 1, -1
+  2.times do
+    with_fx :flanger, amp: 1.5 do
+      synth :sine, note: chord_invert(chord(cd, :m9), invert), release: 4
+      synth :sine, note: chord(cd+5, [:m9].choose), release: 4, amp: 0.5
+      sleep 4
     end
   end
 end
 
-back_effect = [9,7,5,2].ring
-live_loop :back_code, sync: :bd do
-  cd = :c3 + back_effect.first
-  invert = [0, 1, -1].choose
-  with_fx :flanger, amp: 1 do
-    synth :sine, note: chord_invert(chord(cd, :m9), invert), release: 3
-    synth :sine, note: chord(cd+5, [:m9].choose), release: 3, amp: 0.5
-    sleep 4
+live_loop :bass, sync: :bd do
+  use_synth :tri
+  cd = :c1+back_effect.look
+  
+  effect = [7,5,7] #2,9,7
+  2.times do
+    with_fx :reverb, amp: 2.2 do
+      with_fx :krush do
+        sleep 0.125
+        play cd, release: 0.2, sustain: 0
+        2.times do
+          play cd, release: 0.2, sustain: 0
+          sleep 0.25
+        end
+        sleep 0.125
+        play cd, release: 0.2, sustain: 0
+        sleep 0.25
+        # 4
+        sleep 0.25
+        play cd-2, release: 0.2, sustain: 0
+        
+        sleep 0.5
+        play cd, release: 0.2, sustain: 0
+        sleep 0.25
+        
+        ##| sleep 0.375
+        ##| 3.times do
+        ##|   play cd+effect.tick, release: 0.13, sustain: 0
+        ##|   sleep 0.125
+        ##| end
+      end
+    end
   end
 end
 
