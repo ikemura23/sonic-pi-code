@@ -1,3 +1,4 @@
+# output https://twitter.com/ikemura23/status/1487607462966427648
 use_random_seed 9800
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
