@@ -19,7 +19,7 @@ live_loop :splash_hard, sync: :bd do
 end
 
 live_loop :bd2, sync: :bd do
-  _amp = 0 #0.8
+  _amp = 0.8 #0.8
   sample :bd_mehackit, amp: _amp, cutoff: 70
   sleep 0.375
   sample :bd_mehackit, amp: _amp, cutoff: 70
@@ -46,7 +46,7 @@ live_loop :bass, sync: :bd do
   use_synth :tb303
   cd = :a1
   _amp=1.5 #1.5
-  with_fx :lpf, cutoff: 90, amp: _amp do
+  with_fx :lpf, cutoff: 100, amp: _amp do
     
     play cd-2, release: 0.375, sustain: 0
     sleep 0.375
@@ -62,31 +62,31 @@ live_loop :bass, sync: :bd do
 end
 
 live_loop :bass2, sync: :bd do
-  use_synth :fm
-  _cds=[:d3,:d3-2].ring
-  _amp=0 #1,8
+  use_synth :dsaw
+  _cds=[:d2,:d2-2].ring
+  _amp=0 #1,4
   _sl=[0.375, 0.125, 0.25]
   2.times do
     cd = _cds.tick
     with_fx :lpf, cutoff: 90,amp: _amp do
       
       2.times do
-        synth :fm, note: cd, release: 0.375, sustain: 0
+        play cd, release: 0.375, sustain: 0
         sleep 0.375
-        synth :fm, note: cd, release: 0.375, sustain: 0
+        play cd, release: 0.375, sustain: 0
         sleep 0.125
-        synth :fm, note: cd, release: 0.375, sustain: 0
+        play cd, release: 0.375, sustain: 0
         sleep 0.25
-        synth :fm, note: cd-5, release: 0.375, sustain: 0
+        play cd-5, release: 0.375, sustain: 0
         sleep 0.25
         
-        synth :fm, note: cd-12, release: 0.375, sustain: 0
+        play cd-12, release: 0.375, sustain: 0
         sleep 0.375
-        synth :fm, note: cd-12, release: 0.375, sustain: 0
+        play cd-12, release: 0.375, sustain: 0
         sleep 0.125
-        synth :fm, note: cd-12, release: 0.375, sustain: 0
+        play cd-12, release: 0.375, sustain: 0
         sleep 0.25
-        synth :fm, note: cd-5, release: 0.375, sustain: 0
+        play cd-5, release: 0.375, sustain: 0
         sleep 0.25
       end
     end
@@ -115,8 +115,20 @@ live_loop :pico3, sync: :bd do
   16.times do
     with_fx :lpf, cutoff: 80, amp: 1 do
       c = chord_invert(chord(:a5, :m),1).choose+[0,7].choose
-      ##| play c,release: 0.2, sustain: 0
+      play c,release: 0.2, sustain: 0
       sleep 0.125
     end
   end
 end
+
+live_loop :mero, sync: :bd do
+  use_synth :dtri
+  
+  c1 = [:a4,:a4+5]
+  c2 = [:a4+7,:a4+12]
+  s = play c1, release: 4, note_slide: 0.5
+  sleep 0.25
+  control s, note: c2
+  sleep 3.75
+end
+
