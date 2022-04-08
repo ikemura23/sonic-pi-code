@@ -1,3 +1,5 @@
+# output https://twitter.com/ikemura23/status/1511654448048664581
+
 live_loop :kick do
     sample :bd_tek, amp: 1, cutoff: 120
     sleep 0.5
