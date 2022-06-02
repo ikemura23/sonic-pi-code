@@ -1,3 +1,4 @@
+# output https://twitter.com/ikemura23/status/1532272949948219393
 use_bpm 62
 
 live_loop :bd do
@@ -141,16 +142,16 @@ live_loop :mero3, sync: :bd do
   sleep 4
 end
 
-live_loop :mero4, sync: :bd do
-  _release = [0.125, 0.25, 0.375, 0.25]
-  cd = :a4
-  use_synth :saw
-  amp = 0
-  
-  with_fx :reverb, room: 0.7, mix: 0.7 do
-    4.times do
-      play chord(cd+7,:m).tick, release: 0.2, amp: amp
-      sleep _release.look
-    end
-  end
-end
+##| live_loop :mero4, sync: :bd do
+##|   _release = [0.125, 0.25, 0.375, 0.25]
+##|   cd = :a3
+##|   use_synth :saw
+##|   amp = 1
+
+##|   with_fx :reverb, room: 0.7, mix: 0.7 do
+##|     4.times do
+##|       play chord(cd+7,:m).tick, release: 0.2, amp: amp
+##|       sleep _release.look
+##|     end
+##|   end
+##| end
