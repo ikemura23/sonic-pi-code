@@ -1,4 +1,5 @@
 # output https://twitter.com/ikemura23/status/1532272949948219393
+# 参考 Souvenir - Love Deluxe
 use_bpm 62
 
 live_loop :bd do
