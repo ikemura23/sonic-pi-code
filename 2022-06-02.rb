@@ -2,23 +2,13 @@ use_bpm 62
 
 live_loop :bd do
   sleep 0.5
-  ##| sample :bd_tek, cutoff: 110, amp: 1.1
-  
-  
-  ##| sample :bd_tek, cutoff: 110, amp: 1.1
-  ##| sleep 0.375
-  ##| sample :bd_tek, cutoff: 110, amp: 1.1
-  ##| sleep 2-0.375
+  ##| sample :bd_tek, cutoff: 120, amp: 1.1
 end
 
 live_loop :cymbal_open, sync: :bd do
-  ##| sleep 0.25
-  ##| sample :drum_cymbal_open, amp: 1, beat_stretch: 0.5, cutoff: 120
-  ##| sleep 0.25
-  
-  
-  sample :drum_cymbal_open, amp: 1, beat_stretch: 0.5, cutoff: 120
-  sleep 2
+  sleep 0.25
+  sample :drum_cymbal_open, amp: 1, beat_stretch: 0.4, cutoff: 120
+  sleep 0.25
 end
 
 live_loop :sn , sync: :bd do
@@ -33,8 +23,9 @@ live_loop :cd, sync: :bd do
   use_synth :prophet
   keys = [:a3, :a3-2, :a3, :a3]
   cds = [:m, :M, :M, :madd2]
+  amp = 1.5
   
-  with_fx :reverb do
+  with_fx :reverb, amp: amp do
     4.times do
       key = keys.tick
       cd = cds.look
@@ -49,7 +40,7 @@ live_loop :cd, sync: :bd do
   end
 end
 
-live_loop :base2, sync: :bd do
+live_loop :base1, sync: :bd do
   _effect = [8, 7, 5, 0]
   _release = [0.125, 0.25, 0.375, 0.25]
   cd = :a1
@@ -68,24 +59,10 @@ live_loop :base2, sync: :bd do
   end
 end
 
-live_loop :base3, sync: :bd do
-  _release = [0.125, 0.25, 0.375, 0.25]
-  cd = :a4
-  use_synth :prophet
-  
-  with_fx :reverb, room: 0.7, mix: 0.7 do
-    4.times do
-      ##| play chord(cd+7,:m).tick, release: 0.2
-      sleep _release.look
-    end
-  end
-end
-
-
 live_loop :pico, sync: :bd do
   
   use_synth :blade
-  amp = 0
+  amp = 0  #0.8
   
   use_random_seed 700
   sc = (scale :a3+7, :minor_pentatonic).shuffle
@@ -96,7 +73,6 @@ live_loop :pico, sync: :bd do
     end
   end
 end
-
 
 ##| live_loop :mero1, sync: :bd do
 
@@ -145,22 +121,36 @@ live_loop :mero2, sync: :bd do
   sleep 1
 end
 
-##| live_loop :mero3, sync: :bd do
+live_loop :mero3, sync: :bd do
+  
+  use_random_seed 300 #200
+  use_synth :prophet #:tech_saws
+  amp = 0 #0.6
+  
+  sc = (scale :a4, :minor_pentatonic).shuffle
+  sleep 1
+  with_fx :reverb, room: 1, amp: amp do
+    p = play sc.tick, release: 3, note_slide: 0.05, sustain: 4
+    sleep 1
+    control p, note: sc.tick
+    sleep 1
+    control p, note: sc.tick
+    sleep 1
+    control p, note: sc.tick
+  end
+  sleep 4
+end
 
-##|   use_random_seed 300 #200
-##|   use_synth :prophet #:tech_saws
-
-##|   sc = (scale :a4, :minor_pentatonic).shuffle
-##|   sleep 1
-##|   with_fx :reverb, room: 1, amp: 0.6 do
-##|     p = play sc.tick, release: 3, note_slide: 0.05, sustain: 4
-##|     sleep 1
-##|     control p, note: sc.tick
-##|     sleep 1
-##|     control p, note: sc.tick
-##|     sleep 1
-##|     control p, note: sc.tick
-##|   end
-##|   sleep 4
-##| end
-
+live_loop :mero4, sync: :bd do
+  _release = [0.125, 0.25, 0.375, 0.25]
+  cd = :a4
+  use_synth :saw
+  amp = 0
+  
+  with_fx :reverb, room: 0.7, mix: 0.7 do
+    4.times do
+      play chord(cd+7,:m).tick, release: 0.2, amp: amp
+      sleep _release.look
+    end
+  end
+end
