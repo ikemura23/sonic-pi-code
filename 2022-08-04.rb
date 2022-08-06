@@ -58,8 +58,8 @@ end
 
 live_loop :low, sync: :met do
   use_synth :hollow
-  c = [:sus2, :sus4, :m].shuffle
-  ##| play chord(:e4+effect, c.tick), release: 2, sustain: 4, amp: 3, attack: 1
+  ##| c = [:sus2, :sus4, :m].shuffle
+  play chord(:e4+effect, c.tick), release: 2, sustain: 4, amp: 4, attack: 1
   sleep 4
 end
 
