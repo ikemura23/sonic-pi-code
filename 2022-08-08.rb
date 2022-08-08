@@ -1,7 +1,7 @@
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 use_bpm 65
-effect = 5
+effect = 0
 
 live_loop :met do
   sleep 1
@@ -57,9 +57,9 @@ with_fx :hpf, cutoff: 100 do
 end
 
 live_loop :low, sync: :met do
-  use_synth :hollow
   c = [:sus2]
-  play chord(:e3+7+effect, c.tick), release: 2, sustain: 6, amp: 4, attack: 1
+  synth :hollow, note: chord(:e3+7+effect, c.tick), release: 2, sustain: 4, amp: 4, attack: 1
+  ##| synth :saw, note: chord(:e5+effect, c.tick), release: 2, sustain: 4, amp: 0.5, attack: 1
   sleep 4
 end
 
