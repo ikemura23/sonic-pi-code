@@ -132,16 +132,17 @@ with_fx :reverb, mix: 0.6, room: 0.6 do
     
     s = :sine
     a = 3
+    al = 0
     use_synth :sine
     p = "x--x--x-" # "x--x----" "x-x--x-x-x-xx-x-"
     
     32.times do
-      play c1, release: 0.18, attack_level: 2, amp: a if pattern p
+      play c1, release: 0.18, attack_level: al, amp: a if pattern p
       sleep 0.125
     end
     
     32.times do
-      play c2, release: 0.18, attack_level: 2, amp: a if pattern p
+      play c2, release: 0.18, attack_level: al, amp: a if pattern p
       sleep 0.125
     end
   end
