@@ -1,3 +1,5 @@
+# output https://twitter.com/ikemura23/status/1566932161714077696
+
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 effect = 0
