@@ -6,8 +6,8 @@ use_bpm 63
 
 effect = 0
 
-mero_flag = 1
-base_flag = 0
+mero_flag = 0
+base_flag = 1
 strings_flag = 0
 
 live_loop :met do
@@ -86,7 +86,7 @@ with_fx :reverb, mix: 0.3, room: 0.5 do
     if base_flag < 1 then stop end
     ##| stop
     use_synth :fm
-    a = 0.8
+    a = 1
     n = :bb2+effect
     ##| 4.times do
     ##|   play n, sustain: 0.375, release: 0, amp: a
