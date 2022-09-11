@@ -1,7 +1,5 @@
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
-use_bpm 62
-
 effect = 0
 
 live_loop :met do
@@ -14,7 +12,7 @@ end
 
 live_loop :kick, sync: :met do
   ##| stop
-  a = 1.5
+  a = 1.2
   sample :bd_tek, amp: a, cutoff: 130
   sleep 0.5
 end
@@ -59,9 +57,10 @@ with_fx :hpf, cutoff: 100 do
 end
 
 
-with_fx :reverb, mix: 0.5, room: 0.5 do
+with_fx :reverb, mix: 0.3, room: 0.5 do
   
   live_loop :base, sync: :met do
+    stop
     use_synth :fm
     a = 1
     n = :bb2+effect
@@ -88,72 +87,55 @@ with_fx :reverb, mix: 0.5, room: 0.5 do
     ##| end
   end
   
-  live_loop :mero, sync: :met do
-    c1 = chord(:bb3+effect, :m9, invert: 0)
-    c2 = chord(:bb3-2+effect, :maj9, invert: 0)
-    ##| c1 = chord(:b3+effect, :maj9, invert: 4)
-    ##| c2 = chord(:b3-2+effect, :maj9, invert: 4)
+  
+end
+
+live_loop :mero, sync: :met do
+  c1 = chord(:bb3+effect, :m9, invert: 0)
+  c2 = chord(:bb3-2+effect, :maj9, invert: 0)
+  ##| c1 = chord(:b3+effect, :maj9, invert: 4)
+  ##| c2 = chord(:b3-2+effect, :maj9, invert: 4)
+  
+  a = 1.5
+  at = 0.01 #0.03
+  s = 0.125
+  use_synth :sine #:sine :saw
+  
+  with_fx :lpf, cutoff: 130 do
+    p = "x-x-xx-x-x-xx-x-" #"x--x--x-" "x--x----" "x-x--x-x-x-xx-x-"
+    32.times do
+      play c1, sustain: s, release: 0, attack: at, amp: a if pattern p
+      sleep 0.125
+    end
     
-    a = 1
-    at = 0.01 #0.03
-    s = 0.125
-    use_synth :sine #:sine saw
-    
-    
-    ##| with_fx :hpf, cutoff: 30 do
-    ##|   p = "x-x-xx-x-x-xx-x-" #"x--x--x-" "x--x----" "x-x--x-x-x-xx-x-"
-    ##|   32.times do
-    ##|     play c1, sustain: s, release: 0, attack: at, amp: a if pattern p
-    ##|     sleep 0.125
-    ##|   end
-    
-    ##|   32.times do
-    ##|     play c2, sustain: s, release: 0, attack: at, amp: a if pattern p
-    ##|     sleep 0.125
-    ##|   end
-    ##| end
-    
-    ##| with_fx :hpf, cutoff: 30 do
-    ##|   p = "x--x--x--x--x-x-" # x-x-xx-x-x-xx-x-
-    ##|   16.times do |t|
-    ##|     _c = c1
-    ##|     if (t < 12) then _c=c1 else _c=c1 end
-    ##|     play _c, sustain: s, release: 0, attack: at, amp: a if pattern p
-    ##|     sleep 0.125
-    ##|   end
-    ##| end
-    
-    with_fx :hpf, cutoff: 30 do
-      play c1, sustain: 0.125*3, release: 0, attack: at, amp: a
-      sleep 0.125*3
-      play c1, sustain: 0.125, release: 0, attack: at, amp: a
-      sleep 0.125*3
-      play c1, sustain: 0.125*3, release: 0, attack: at, amp: a
-      sleep 0.125*3
-      play c1, sustain: 0.125, release: 0, attack: at, amp: a
-      sleep 0.125*3
-      
-      play c1, sustain: 0.125, release: 0, attack: at, amp: a
-      sleep 0.125*2
-      
-      play c2, sustain: 0.125, release: 0, attack: at, amp: a
-      sleep 0.125*2
+    32.times do
+      play c2, sustain: s, release: 0, attack: at, amp: a if pattern p
+      sleep 0.125
     end
   end
+  
+  ##| with_fx :lpf, cutoff: 100 do
+  ##|   play c1, sustain: 0.125*3, release: 0, attack: at, amp: a
+  ##|   sleep 0.125*3
+  ##|   play c1, sustain: 0.125, release: 0, attack: at, amp: a
+  ##|   sleep 0.125*3
+  ##|   play c1, sustain: 0.125*3, release: 0, attack: at, amp: a
+  ##|   sleep 0.125*3
+  ##|   play c1, sustain: 0.125, release: 0, attack: at, amp: a
+  ##|   sleep 0.125*3
+  
+  ##|   play c1, sustain: 0.2, release: 0, attack: at, amp: a
+  ##|   sleep 0.125*2
+  
+  ##|   play c2, sustain: 0.2, release: 0, attack: at, amp: a
+  ##|   sleep 0.125*2
+  ##| end
+  
 end
 
-
-live_loop :strings2, sync: :met do
-  stop
-  a = 5
-  synth :hollow, note: chord(:bb5+7+effect, :maj9), release: 1, sustain: 4, amp: a
-  sleep 4
-  synth :hollow, note: chord(:bb5+5+effect, :maj9), release: 1, sustain: 4, amp: a
-  sleep 4
-end
 
 live_loop :strings, sync: :met do
-  ##| stop
+  stop
   a = 3
   with_fx :hpf ,cutoff: 100 do
     
@@ -182,4 +164,3 @@ live_loop :strings, sync: :met do
     sleep 8
   end
 end
-
