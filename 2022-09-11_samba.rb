@@ -6,8 +6,8 @@ use_bpm 63
 
 effect = 0
 
-mero_flag = 0
-base_flag = 1
+mero_flag = 1
+base_flag = 0
 strings_flag = 0
 
 live_loop :met do
