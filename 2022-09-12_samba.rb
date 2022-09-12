@@ -5,11 +5,12 @@ percussion = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/
 use_bpm 63
 
 effect = 0
+invert = 0 # 0 4
 
-mero_flag = 1
-base_flag = 1
+mero_flag = 0
+base_flag = 0
 snare_flag = 1
-cowbel_flag = 0
+cowbel_flag = 1
 
 live_loop :met do
   sleep 1
@@ -30,7 +31,9 @@ live_loop :kick, sync: :met do
   
   14.times do
     sample :bd_tek , amp: a, cutoff: 100
-    sleep 0.5
+    sleep 0.375
+    sample :bd_tek, amp: 1, cutoff: 100
+    sleep 0.125
     
     sample :bd_tek , amp: a, cutoff: 100
     sleep 0.375
@@ -42,7 +45,9 @@ end
 
 live_loop :splash, sync: :met do
   sample :drum_splash_hard
-  sleep 16
+  sleep 8
+  sample :drum_splash_soft ,amp: 1.3
+  sleep 8
 end
 
 with_fx :echo, mix: 0.2 do
@@ -64,9 +69,10 @@ with_fx :echo, mix: 0.2 do
       sample :drum_snare_soft, finish: 0.25, amp: a
       sleep 0.25
     end
+    
     live_loop :cowbel , sync: :met do
       if cowbel_flag < 1 then stop end
-      a = 0.2
+      a = 0.3
       sample :drum_cowbell, rate: 0.5, amp: a
       sleep 0.375
       sample :drum_cowbell, rate: 0.5, amp: a
@@ -120,22 +126,20 @@ with_fx :reverb, mix: 0.3, room: 0.5 do
     play n-5, release: 0, sustain: 0.25, amp: a
     sleep 0.25
     
-    sleep 0.125
-    play n, sustain: 0.375-0.125, release: 0, amp: a
-    sleep 0.375-0.125
-    play n, release: 0, sustain: 0.125, amp: a
-    sleep 0.125
-    play n-5, release: 0, sustain: 0.25, amp: a
-    sleep 0.25
-    play n-5, release: 0, sustain: 0.25, amp: a
-    sleep 0.25
+    ##| sleep 0.125
+    ##| play n, sustain: 0.375-0.125, release: 0, amp: a
+    ##| sleep 0.375-0.125
+    ##| play n, release: 0, sustain: 0.125, amp: a
+    ##| sleep 0.125
+    ##| play n-5, release: 0, sustain: 0.25, amp: a
+    ##| sleep 0.25
+    ##| play n-5, release: 0, sustain: 0.25, amp: a
+    ##| sleep 0.25
   end
-  
 end
 
 live_loop :mero, sync: :met do
   if mero_flag < 1 then stop end
-  invert = 0 #0 4
   c1 = chord(:c3+effect,:m9, invert: invert)
   c2 = chord(:cs3+effect, :maj9, invert: invert)
   
@@ -145,9 +149,9 @@ live_loop :mero, sync: :met do
   use_synth :saw #:sine :saw
   
   with_fx :lpf, cutoff: 100 do
-    play c1, sustain: 0.125, release: 0, attack: at, amp: a
+    play c1, sustain: 0.125*3, release: 0, attack: at, amp: a
     sleep 0.5
-    play c1, sustain: 0.125, release: 0, attack: at, amp: a
+    play c1, sustain: 0.125*3, release: 0, attack: at, amp: a
     sleep 0.5
     play c2, sustain: 0.125*2, release: 0, attack: at, amp: a
     sleep 0.375
@@ -174,7 +178,6 @@ end
 
 live_loop :mero2, sync: :met do
   if mero_flag < 1 then stop end
-  invert = 0 #0 4
   c1 = chord(:c4+effect,:m9, invert: invert).last
   c2 = chord(:cs4+effect, :maj9, invert: invert).last
   
@@ -184,9 +187,9 @@ live_loop :mero2, sync: :met do
   use_synth :dpulse #:sine :saw
   
   with_fx :lpf, cutoff: 100 do
-    play c1, release: 0.125, attack: at, amp: a
+    play c1, release: 0.125*3, attack: at, amp: a
     sleep 0.5
-    play c1, release: 0.125, attack: at, amp: a
+    play c1, release: 0.125*3, attack: at, amp: a
     sleep 0.5
     play c2, release: 0.125*2, attack: at, amp: a
     sleep 0.375
