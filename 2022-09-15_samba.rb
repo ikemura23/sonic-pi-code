@@ -6,14 +6,14 @@ use_bpm 63
 
 effect = 0
 
-invert = 0 # 0 3 4
+invert = -1 # 0 3 4
 seed = 2100 # 2100 6000 6001
 
 mero_flag = 1
 mero2_flag = 0
 base_flag = 1
-snare_flag = 0
-cowbel_flag = 0
+snare_flag = 1
+cowbel_flag = 1
 
 live_loop :met do
   sleep 1
