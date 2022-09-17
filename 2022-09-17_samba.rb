@@ -1,15 +1,12 @@
 use_debug false
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
-percussion = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_percussion\ loops"
 
-mero_flag = 1
+mero_flag = 0
 mero2_flag = 1
 base_flag = 1
 snare_flag = 1
 cowbel_flag = 0
 
 effect = 0
-##| invert = 0
 
 live_loop :met do
   sleep 1
@@ -19,11 +16,6 @@ end
 
 define :pattern do |pattern|
   return pattern.ring.tick == "x"
-end
-
-live_loop :percussion, sync: :met do
-  ##| sample percussion, 10, amp: 0.7, beat_stretch: 4, start: 0, finish: 0.5 #8, 10
-  sleep 2
 end
 
 live_loop :kick, sync: :met do
@@ -154,7 +146,7 @@ live_loop :mero2_loop, sync: :met do
   if mero2_flag < 1 then stop end
   
   key = :d4
-  synth = :sine #:sine :saw
+  synth = :sine #:sine :saw, :piano
   invert = 0
   
   c1 = chord(key+effect,:m9, invert: invert)
@@ -171,7 +163,7 @@ live_loop :mero2_loop, sync: :met do
 end
 
 define :mero2 do |c1, c2 , synth=:sine|
-  a = 1
+  a = 1.5
   use_synth synth
   with_fx :lpf, cutoff: 130 do
     at = 0.01
@@ -203,6 +195,8 @@ end
 # base -----------------
 
 live_loop :base, sync: :met do
+  if base_flag < 1 then stop end
+  
   base :d2
   base :d2
   
@@ -213,8 +207,6 @@ end
 
 define :base do |n, n2=n|
   with_fx :reverb, mix: 0.3, room: 0.5 do
-    
-    ##| if base_flag < 1 then stop end
     
     use_synth :fm
     a = 1
@@ -241,8 +233,3 @@ define :base do |n, n2=n|
     
   end
 end
-
-
-
-
-
