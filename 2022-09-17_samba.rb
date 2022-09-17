@@ -1,3 +1,4 @@
+# output https://twitter.com/ikemura23/status/1571160535164661761
 use_debug false
 
 mero_flag = 0
