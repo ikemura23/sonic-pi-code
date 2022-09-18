@@ -1,7 +1,7 @@
 use_debug false
 
 mero_flag = 0
-mero2_flag = 0
+mero2_flag = 1
 mero3_flag = 0
 base_flag = 1
 snare_flag = 1
@@ -216,7 +216,7 @@ live_loop :mero3, sync: :met do
   a = 1
   at = 0.01 #0.03
   s = 0.125
-  use_synth :rodeo #:sine :saw
+  use_synth :dsaw #:sine :saw
   
   key = :d3+7
   with_fx :wobble do
@@ -236,8 +236,19 @@ live_loop :mero3, sync: :met do
         sleep 3
         play key+7, release: 1, attack: at, amp: a
         sleep 1
-        play key+3, release: 1, attack: at, amp: a
+        play key+3, release: 3, attack: at, amp: a
         sleep 4
+        
+        ##| 2.times do
+        ##|   play key-2, release: 0.3, attack: at, amp: a
+        ##|   sleep 0.25
+        ##|   play key-1, release: 0.3, attack: at, amp: a
+        ##|   sleep 0.25
+        ##|   play key, release: 0.5, attack: at, amp: a
+        ##|   sleep 0.375
+        ##| end
+        ##| sleep 0.125*2
+        
       end
     end
   end
