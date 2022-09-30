@@ -1,3 +1,4 @@
+# output https://twitter.com/ikemura23/status/1575892874150830084
 use_debug false
 use_bpm 66
 
@@ -79,7 +80,6 @@ with_fx :hpf, cutoff: 100 do
     sleep 0.25
   end
 end
-
 # mero ---------------------
 
 live_loop :mero_loop, sync: :met do
@@ -119,7 +119,6 @@ with_fx :reverb, mix: 0.5, room: 0.5 do
     play c, release: sl*1.3, amp: a
     sleep sl
   end
-  
   
   live_loop :mero3 , sync: :met do
     if mero3_flag < 1 then stop end
@@ -241,13 +240,10 @@ define :base do |c|
       sleep 0.375
       
       ##| sleep 0.25
-      ##| play c, release: 0.2, amp: a
+      ##| play c, sustain: 0.2, release: 0, amp: a
       ##| sleep 0.5
-      ##| play c, release: 0.2, amp: a
-      ##| sleep 0.125
-      ##| play c, sustain: 0.2, release: 0, amp: 0.4
-      ##| ##| sleep 0.25
-      ##| sleep 0.375
+      ##| play c, sustain: 0.2, release: 0,amp: a
+      ##| sleep 0.5
       
       ##| play c+5, sustain: 0.125, release: 0, amp: a
       ##| sleep 0.375
