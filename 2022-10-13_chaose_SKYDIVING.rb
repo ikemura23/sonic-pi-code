@@ -1,9 +1,9 @@
+# output https://twitter.com/ikemura23/status/1580318618260475904
+
 use_debug false
 use_bpm 66
 
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
-
-
 
 mero2_flag = 1
 mero3_flag = 0
