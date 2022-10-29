@@ -7,15 +7,16 @@ percussion = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/
 
 
 mero_flag = 1
+mero3_flag = 0
 
-base_flag = 0
-base2_flag = 0
+base_flag = 1
+base2_flag = 1
 
 kick_hat_frag = 1
-cymbal_open_flag = 0
+cymbal_open_flag = 1
 splash2_flag = 1
 
-percussion_flag = 1
+percussion_flag = 0
 
 live_loop :met do
   sleep 1
@@ -117,11 +118,11 @@ live_loop :base, sync: :met do
   
 end
 
-live_loop :base2, sync: :met do
-  if base2_flag < 1 then stop end
-  
-  base2 :f1+2
-end
+##| live_loop :base2, sync: :met do
+##|   if base2_flag < 1 then stop end
+
+##|   base2 :f2+2
+##| end
 
 define :base do |c|
   with_fx :reverb, mix: 0.3, room: 0.5 do
@@ -167,7 +168,7 @@ define :base2 do |c|
   with_fx :reverb, mix: 0.5, room: 0.5 do
     
     use_synth :dpulse # :square :dpulse
-    a = 1
+    a = 2
     
     3.times do
       play c, release: 0.2, amp: a
@@ -182,34 +183,54 @@ define :base2 do |c|
     
     sleep 4-0.25*5
     
-    ##| play c+8, release: 0.2, amp: a
-    ##| sleep 0.125
-    ##| play c+5, release: 0.2, amp: a
-    ##| sleep 0.125
   end
 end
 
 with_fx :reverb, mix: 0.5, room: 0.5 do
   live_loop :mero, sync: :met do
     if mero_flag < 1 then stop end
-    c = chord(:f4+4, :a) #+[1,2,3,4,5].choose
-    ##| c = chord(:f4+9, :m9)
-    a = 2
-    use_synth :prophet
-    ##| ef = [0, -2, -4, 2].ring
+    c = chord(:f4+4, :a)
+    use_synth :saw
+    a = 1.5
+    at = 0.05
     
     with_fx :bpf do
-      at = 0.05
-      ##| 4.times do
-      ##| c+=ef.tick
-      3.times do
-        play c, sustain: 0.1, release: 0.1, amp: a
-        sleep 0.375
+      with_fx :wobble, phase: 0.375 do
+        
+        3.times do
+          play c, sustain: 0.1, release: 0.1, amp: a, attack: at
+          sleep 0.375
+        end
+        sleep 4-0.375*3
       end
-      sleep 4-0.375*3
+    end
+  end
+  
+  live_loop :mero3 , sync: :met do
+    if mero3_flag < 1 then stop end
+    
+    a = 0.6
+    use_synth :supersaw
+    
+    c = chord(:f3, :a, invert: 0)
+    with_fx :echo, mix: 0.2 do
+      ##| with_fx :wobble,invert_wave: 0, phase: rrand(0.2, 1), wave: 0, mix: 0.9 do
+      play :fs4, sustain: 3, release: 0.5,note_slide: 0.1, amp: a do |s|
+        sleep 1
+        control s, note: :fs4+6
+        sleep 1
+        control s, note: :fs4+3
+        sleep 1
+      end
+      sleep 3
+      play :fs4-2, release: 0.3, attack: 0.05
+      sleep 0.375
+      play :fs4-2, release: 0.3, attack: 0.05
+      sleep 0.375
+      play :fs4-2, release: 0.3, attack: 0.05
+      sleep 1-0.375*2
     end
     ##| end
-    
   end
   
 end
