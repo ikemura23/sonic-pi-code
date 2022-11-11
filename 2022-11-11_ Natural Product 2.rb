@@ -7,8 +7,8 @@ percussion = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/
 
 
 kick_hat_frag = 1
-clap_frag = 0
-percussion_flag = 1
+clap_frag = 1
+percussion_flag = 0
 
 live_loop :met do
   sleep 1
@@ -108,33 +108,33 @@ live_loop :mero, sync: :met do
 end
 
 live_loop :mero2, sync: :met do
-  use_synth :dsaw
-  with_fx :bpf, cutoff: 130, amp: 1.2 do
-    with_fx :reverb, room: 0.9, mix: 0.8 do
-      with_fx :wobble, phase: 8, mix: 0.4, wave: 3 do
-        sleep 1.5
-        ##| play chord(:a2+7, :m7, invert: [0,-1,1,2].choose), release: 4, attack: 0
-        sleep 6.5
-      end
-    end
-  end
+  use_synth :hollow
+  ##| with_fx :bpf, cutoff: 130, amp: 5 do
+  ##| with_fx :reverb, room: 0.9, mix: 0.8 do
+  ##| with_fx :wobble, phase: 8, mix: 0.4, wave: 3 do
+  ##| sleep 1.5
+  ##| play chord(:a4+2, :m7, invert: 1), release: 0, sustain: 8, amp: 3
+  sleep 8
+  ##| end
 end
+##| end
+##| end
 
 live_loop :mero3, sync: :met do
-  stop
+  ##| stop
   ##| use_random_seed 100
   sl = [0.5, 0.375, 0.375, 0.375, 0.375, 0.375, 0.375, 0.375, 0.125]
-  ef = [0,0,1,1,1,0,0,0,0]
+  ef = [2,2,1,1,4,4,0,0,0]
   
   ##| sl = [0.375, 0.375, 0.375, 0.375]
-  ##| ef = [0,0,1,1]
+  ##| ef = [0,4,5,-2]
   
   with_fx :reverb, mix: 0.5, room: 0.5 do
-    with_fx :wobble, phase: 0.375, invert_wave: 0, mix: 1 do
+    with_fx :wobble, phase: 0.375, invert_wave: 0, mix: 0.5 do
       tick_reset
       sl.size.times do
-        synth :dsaw, note: chord(:a2+ef.tick, :m9, invert: 3), release: 0.3, attack: 0.05, amp: 0.8
-        synth :dsaw, note: chord(:a1+ef.look, :m9, invert: 0), release: 0.3, attack: 0.05, amp: 0.5
+        synth :dpulse, note: chord(:a2+ef.tick, :m9, invert: 3), release: 0.3, attack: 0.05, amp: 0.8
+        ##| synth :dpulse, note: chord(:a1+ef.look, :m9, invert: 0), release: 0.3, attack: 0.05, amp: 0.5
         sleep sl.look
       end
       sleep 4-sl.sum
