@@ -1,3 +1,4 @@
+# output https://twitter.com/ikemura23/status/1593006160202076161
 use_debug false
 ##| use_bpm 70
 
@@ -15,7 +16,7 @@ end
 with_fx :reverb, room: 0.2 do
   live_loop :kick, sync: :met do
     if kick_hat_frag < 1 then stop end
-    sample :bd_ada, rate: 1, amp: 1.5
+    sample :bd_tek, rate: 1, amp: 1.2
     sleep 0.5
   end
   
@@ -82,8 +83,9 @@ live_loop :base, sync: :met do
           synth :dsaw, note: s, sustain: 0.05, release: 0.2, amp: 1
           synth :tb303, note: s, sustain: 0.05, release: 0.2, amp: 0.2
           
-          ##|   synth :fm, note: sc.first, sustain: 0.05, release: 0.1, amp: 1
           ##| synth :saw, note: s+24, sustain: 0.125, release: 0.05, amp: 0.5
+          ##|   synth :fm, note: sc.first, sustain: 0.05, release: 0.1, amp: 1
+          
           sleep 0.125
         end
       end
@@ -105,11 +107,10 @@ end
 live_loop :mero2, sync: :met do
   ##| stop
   use_synth :hollow
-  ##| with_fx :bpf, cutoff: 0 do
-  ##| with_fx :reverb, room: 0.5, mix: 0.8 do
-  ##| sleep 3
-  play chord(:e3+ef, :sus4, invert: [0,1,0,-1].tick), sustain: 8, release: 1, attack: 0.25, amp: 4
-  sleep 8
+  ##| with_fx :wobble, wave: 0, invert_wave: [1,0].tick, phase: 16 do
+    play chord(:e3+ef, :sus4, invert: [0,1,0,-1].choose), sustain: 8, release: 1, attack: 0.25, amp: 4
+    sleep 8
+  ##| end
 end
-##| end
+
 
