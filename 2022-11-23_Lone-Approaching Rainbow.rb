@@ -1,12 +1,14 @@
-use_bpm 60
+# output youtube https://www.youtube.com/watch?v=DV7Ff8LyvuY
+
+use_bpm 62
 
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 hat_loops = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/drum_loops/LCC_hat\ loops"
 
-kick_hat_flag = 0
-hat_loops_flag = 0
-safali_loops_flag = 0
-clap_flag = 0
+kick_hat_flag = 1
+hat_loops_flag = 1
+safali_loops_flag = 1
+clap_flag = 1
 
 live_loop :met do
   sleep 1
@@ -72,7 +74,7 @@ end
 
 live_loop :mero, sync: :met do
   stop
-  use_synth :rodeo
+  use_synth :prophet
   
   key = :as3
   keys = [
@@ -83,38 +85,53 @@ live_loop :mero, sync: :met do
   sl = [0.75, 0.75, 0.5].ring
   
   keys.size.times do
-    play chord(keys.tick, :m7), release: 0, sustain: sl.look, amp: 1.5
+    play chord(keys.tick, :m7).last, release: 0, sustain: sl.look, amp: 0.4
     sleep sl.look
   end
 end
 
 live_loop :mero2, sync: :met do
   ##| stop
-  a = 1.5
+  a = 1.2
   use_synth :dsaw
   key = :as3
+  _attack = 0.07
+  
   with_fx :lpf, cutoff: 100 do
-    
-    sl = [0.75, 0.75, 0.5].ring
-    keys = [
-      key, key+2, key+5, key+7, key+5, key+2,
-      key+5, key+2, key, key+2, key, key-5
-    ]
-    
-    _attack = 0.02
-    
-    keys.size.times do
-      key = keys.tick
-      play chord(key, :m7), release: 0.75, amp: a, attack: _attack
-      play chord(key-12, :m7, invert: -1), release: 0.75, amp: a, attack: _attack
-      sleep sl.look
+    with_fx :reverb, mix: 0.5, room: 0.7 do
+      
+      sl = [0.75, 0.75, 0.5].ring
+      effs = [
+        0, 2, 5, 7, 5, 2,
+        5, 2, 0, 2, 0, -5
+      ]
+      
+      effs.size.times do
+        eff = effs.tick
+        play chord(key+eff, :m7), release: 0.75, amp: a, attack: _attack
+        play chord(key-12+eff, :m7, invert: -1), release: 0.75, amp: a, attack: _attack
+        sleep sl.look
+      end
+      
+      ##| use_random_seed 100
+      ##| sl = [0.375, 0.375, 0.375, 0.375, 0.25, 0.25]
+      ##| effs = [0, 2, 5, 0, -2, 0, 0, -5]
+      
+      ##| effs.size.times do |i|
+      ##|   e = effs[i]
+      ##|   sl.size.times do
+      ##|     play chord(key+e, :m7), release: 0.5, amp: a, attack: _attack
+      ##|     play chord(key-12+e, :m7, invert: -1), release: 0.5, amp: a, attack: _attack
+      ##|     sleep sl.tick
+      ##|   end
+      ##| end
+      
     end
-    
   end
 end
 
 live_loop :base, sync: :met do
-  stop
+  ##| stop
   use_synth :dsaw
   
   key = :as1-7
@@ -128,7 +145,7 @@ live_loop :base, sync: :met do
   sl = [0.375, 0.375, 0.375, 0.375, 0.25, 0.25].ring
   
   with_fx :reverb, mix: 0.5, room: 0.5, amp: 1.7 do
-    with_fx :lpf, cutoff: 80 do
+    with_fx :lpf, cutoff: 65 do
       keys.size.times do
         play keys.tick, sustain: sl.look, release: 0
         sleep sl.look
@@ -144,12 +161,12 @@ live_loop :pico, sync: :met do
     with_fx :wobble, phase: 0.375, wave: 0, mix: 0.4 do
       with_fx :echo, decay: 4, phase: 0.25 do
         
-        c = chord(:as4, :m7, invert: [-1,0,1,2,3].choose)
-        4.times do
+        c = chord(:as4, :m7, invert: [-1,0,1,2].choose)
+        6.times do
           synth :dpulse, note: c.tick, release: 0.125, amp: a, cutoff: rrand(80, 110)
-          sleep 0.375
+          sleep [0.375, 0.625].choose
         end
-        sleep 3
+        sleep 2
         
       end
     end
