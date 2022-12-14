@@ -1,4 +1,4 @@
-# 元 https://youtu.be/3pK2ygVcfPU?t=1125
+# 元 https://youtu.be/3pK2ygVcfPU?t=1077
 
 use_bpm 62
 
@@ -23,8 +23,13 @@ with_fx :reverb, room: 0.2 do
   
   live_loop :hat, sync: :met do
     if kick_hat_flag < 1 then stop end
-    sample :drum_cymbal_closed, amp: 0.5, cutoff: 120
     sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.5, cutoff: 120
+    sleep 0.125
+    sample :drum_cymbal_closed, amp: 0.5, cutoff: 120
+    sleep 0.125
+    ##| sample :drum_cymbal_closed, amp: 0.5, cutoff: 120
+    ##| sleep 0.125
   end
   
   live_loop :hat_loop, sync: :met do
@@ -50,26 +55,59 @@ with_fx :reverb, room: 0.2 do
   end
 end
 
+### chorus
+
 live_loop :chorus_1, sync: :met do
   ##| stop
   use_synth :hollow
+  a = 5
   
-  a = 3.5
-  with_fx :lpf, cutoff: 90 do
-    play chord(:a5, :M, invert: 0), release: 0.5,sustain: 4, amp: a
-    play :a6, release: 0.5,sustain: 4, amp: a-2
+  ##| key1 = :a5
+  ##| c1 = chord(key1, :M, invert: 0)
+  ##| key2 = :gb5
+  ##| c2 = chord(key2, :sus2, invert: 0)
+  
+  sounds = [
+    [:a5,:M], [:gb5,:sus2],
+    [:a5,:M], [:gb5,:sus2],
+    [:a5+2,:M], [:gb5,:sus2],
+    [:a5+2,:M], [:gb5-2,:m9],
+    [:a5+2,:M], [:gb5-5,:m9],
+    [:a5+2,:M], [:gb5-2,:M],
+  ]
+  
+  ##| key1 = :a5+2
+  ##| c1 = chord(key1, :M, invert: 0)
+  ##| key2 = :gb5-5
+  ##| c2 = chord(key2, :m7, invert: 0)
+  
+  ##| with_fx :lpf, cutoff: 90 do
+  ##| play c1, release: 0.5,sustain: 4, amp: a
+  ##| play key1+12, release: 0.5,sustain: 4, amp: a-2
+  ##| sleep 4
+  
+  
+  sounds.size.times do |i|
+    key = sounds[i].first
+    tonic = sounds[i].last
+    cd = chord(key, tonic, invert: 0)
+    
+    play cd, release: 0.5,sustain: 4, amp: a
+    play key+12, release: 0.5,sustain: 4, amp: a-2
     sleep 4
-    play chord(:gb5, :sus2, invert: 0), release: 0.5,sustain: 4, amp: a
-    play :gb5, release: 0.5,sustain: 4, amp: a-2
-    sleep 4
+    
   end
+  ##| end
 end
 
 live_loop :chorus_2, sync: :met do
   ##| stop
   a = 0.9
   use_synth :saw
-  key = :eb4+7
+  
+  c1 = chord(:d3, :M, invert: 1)
+  c2 = chord(:e3, :sus2, invert: 1)
+  
   _attack = 0.1
   with_fx :slicer, phase: 0.5, mix: 0.2, wave: 3 do
     with_fx :lpf, cutoff: 90 do
@@ -87,7 +125,7 @@ end
 
 
 live_loop :mero1, sync: :met do
-  ##| stop
+  stop
   a = 1.5
   use_synth :tech_saws
   
@@ -104,6 +142,8 @@ live_loop :mero1, sync: :met do
   ##| end
 end
 
+
+### base ###
 
 live_loop :base, sync: :met do
   ##| stop
@@ -130,6 +170,25 @@ live_loop :base, sync: :met do
     end
   end
   
+end
+
+
+live_loop :mero1, sync: :met do
+  ##| stop
+  a = 1.5
+  use_synth :tech_saws
+  
+  ##| with_fx :slicer, phase: 0.5, mix: 0.2, wave: 3 do
+  with_fx :lpf, cutoff: 130 do
+    with_fx :reverb, mix: 0.5, room: 0.5 do
+      sleep 0.5
+      sleep 0.25
+      play chord(:d3+7, :M, invert: 0), release: 0,sustain: 0.3, amp: a
+      sleep 2-0.75
+      
+    end
+  end
+  ##| end
 end
 
 live_loop :pico, sync: :met do
