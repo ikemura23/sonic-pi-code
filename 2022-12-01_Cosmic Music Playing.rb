@@ -61,12 +61,7 @@ live_loop :chorus_1, sync: :met do
   ##| stop
   use_synth :hollow
   a = 5
-  
-  ##| key1 = :a5
-  ##| c1 = chord(key1, :M, invert: 0)
-  ##| key2 = :gb5
-  ##| c2 = chord(key2, :sus2, invert: 0)
-  
+
   sounds = [
     [:a5,:M], [:gb5,:sus2],
     [:a5,:M], [:gb5,:sus2],
@@ -76,24 +71,13 @@ live_loop :chorus_1, sync: :met do
     [:a5+2,:M], [:gb5-2,:M],
   ]
   
-  ##| key1 = :a5+2
-  ##| c1 = chord(key1, :M, invert: 0)
-  ##| key2 = :gb5-5
-  ##| c2 = chord(key2, :m7, invert: 0)
-  
-  ##| with_fx :lpf, cutoff: 90 do
-  ##| play c1, release: 0.5,sustain: 4, amp: a
-  ##| play key1+12, release: 0.5,sustain: 4, amp: a-2
-  ##| sleep 4
-  
-  
   sounds.size.times do |i|
     key = sounds[i].first
     tonic = sounds[i].last
     cd = chord(key, tonic, invert: 0)
     
-    play cd, release: 0.5,sustain: 4, amp: a
-    play key+12, release: 0.5,sustain: 4, amp: a-2
+    play cd, release: 0.5,sustain: 4, amp: a, attack: 0.2
+    play key+12, release: 0.5,sustain: 4, amp: a-2, attack: 0.2
     sleep 4
     
   end
