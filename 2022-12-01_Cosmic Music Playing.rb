@@ -1,4 +1,4 @@
-# 元 https://youtu.be/3pK2ygVcfPU?t=1077
+# output https://twitter.com/ikemura23/status/1603909315446071296
 
 use_bpm 62
 
@@ -58,17 +58,17 @@ end
 ### chorus
 
 live_loop :chorus_1, sync: :met do
-  ##| stop
+  stop
   use_synth :hollow
   a = 5
-
+  
   sounds = [
     [:a5,:M], [:gb5,:sus2],
     [:a5,:M], [:gb5,:sus2],
-    [:a5+2,:M], [:gb5,:sus2],
-    [:a5+2,:M], [:gb5-2,:m9],
-    [:a5+2,:M], [:gb5-5,:m9],
-    [:a5+2,:M], [:gb5-2,:M],
+    ##| [:a5+2,:M], [:gb5,:sus2],
+    ##| [:a5+2,:M], [:gb5-2,:m9],
+    ##| [:a5+2,:M], [:gb5-5,:m9],
+    ##| [:a5+2,:M], [:gb5-2,:M],
   ]
   
   sounds.size.times do |i|
@@ -113,7 +113,6 @@ live_loop :mero1, sync: :met do
   a = 1.5
   use_synth :tech_saws
   
-  ##| with_fx :slicer, phase: 0.5, mix: 0.2, wave: 3 do
   with_fx :lpf, cutoff: 130 do
     with_fx :reverb, mix: 0.5, room: 0.5 do
       sleep 0.5
@@ -123,7 +122,6 @@ live_loop :mero1, sync: :met do
       
     end
   end
-  ##| end
 end
 
 
