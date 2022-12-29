@@ -1,3 +1,6 @@
+# https://twitter.com/ikemura23/status/1586512403382276098
+# https://twitter.com/ikemura23/status/1586847162083774464
+
 use_debug false
 use_bpm 63
 
