@@ -1,3 +1,5 @@
+# output https://twitter.com/ikemura23/status/1595195334321655808
+
 use_bpm 60
 
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
