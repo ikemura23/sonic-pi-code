@@ -1,16 +1,15 @@
 # output https://twitter.com/ikemura23/status/1453549972499038208
-use_bpm 70
-drum2 = "/Users/k_ikemura/Music/sonic_pi"
 
-# Welcome to Sonic Pi
+use_bpm 65
+drum_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/drum_loops/LCC_hat loops"
 
 live_loop :kick do
   sleep 0.5
-  ##| sample :bd_haus, lpf: 100, amp: 1.5
+  sample :bd_haus, lpf: 100, amp: 1.5
 end
 
 live_loop :drum, sync: :kick do
-  sample drum2, 4, beat_stretch:8, amp: 1, hpf: 100, start: 0, finish: 0.5
+  sample drum_loop, 2, beat_stretch:8, amp: 1, hpf: 100, start: 0, finish: 0.5
   sleep 4
 end
 
