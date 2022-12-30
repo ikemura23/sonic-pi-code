@@ -1,4 +1,4 @@
-## base template
+## bass template
 
 live_loop :bd do
   sleep 0.5
@@ -6,10 +6,10 @@ live_loop :bd do
 end
 
 
-live_loop :base_loop, sync: :bd do
-  ##| base1 :c3
-  ##| base7 :c2
-  ##| base3 :c3
+live_loop :bass_loop, sync: :bd do
+  ##| bass1 :c3
+  ##| bass7 :c2
+  ##| bass3 :c3
   ##| bass4 :c2
   ##| bass5 :g1
   ##| bass6 :g2
@@ -17,7 +17,7 @@ live_loop :base_loop, sync: :bd do
 end
 
 ## ハネるタイプ
-define :base1 do | note, ef=0|
+define :bass1 do | note, ef=0|
   with_fx :reverb do
     use_synth :fm
     use_synth_defaults release: 0.3, amp: 1.2, attack_level: 2
@@ -37,7 +37,7 @@ define :base1 do | note, ef=0|
   end
 end
 
-define :base2 do | note |
+define :bass2 do | note |
   use_synth :dsaw
   use_synth_defaults release: 0.3
   
@@ -53,7 +53,7 @@ define :base2 do | note |
   end
 end
 
-define :base7 do | note |
+define :bass7 do | note |
   use_synth :dsaw
   use_synth_defaults release: 0.3
   
@@ -67,7 +67,7 @@ define :base7 do | note |
   end
 end
 
-define :base3 do | note |
+define :bass3 do | note |
   with_fx :reverb do
     use_synth :fm
     use_synth_defaults release: 0.3, amp: 1, attack_level: 2
