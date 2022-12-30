@@ -17,9 +17,6 @@ mero3_flag = 0
 
 bass_flag = 1
 
-##| ef = 0
-##| code_name = :m9
-
 live_loop :met do
   sleep 1
 end
