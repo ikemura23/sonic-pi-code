@@ -8,11 +8,12 @@ end
 
 live_loop :base_loop, sync: :bd do
   ##| base1 :c3
-  base7 :c2
+  ##| base7 :c2
   ##| base3 :c3
-  ##| base4 :c2
+  ##| bass4 :c2
   ##| bass5 :g1
   ##| bass6 :g2
+  bass7 :f2
 end
 
 ## ハネるタイプ
@@ -136,4 +137,28 @@ define :bass6 do | note |
   play note
   sleep 0.25
   sleep 4-0.25*11
+end
+
+# deep house に合う
+define :bass7 do |note|
+  
+  use_random_seed 100 # 100 10 9230 9233
+  sl = [0.25, 0.25, 0.25, 0.25, 0.375].shuffle
+  
+  c = chord(note, :sus4, invert: -1) # m9
+  with_fx :reverb, mix: 0.5, room: 0.5, amp: 1.5 do
+    with_fx :lpf, cutoff: 80 do
+      sl.size.times do
+        
+        synth :dsaw, note: c.choose, sustain: 0.125, release: 0
+        sleep sl.tick
+      end
+      
+      sleep 2-sl.sum-0.25
+      synth :dsaw, note: c.choose, sustain: 0.125, release: 0
+      sleep 0.125
+      synth :dsaw, note: c.choose, sustain: 0.125, release: 0
+      sleep 0.125
+    end
+  end
 end
