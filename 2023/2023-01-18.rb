@@ -4,16 +4,12 @@ use_debug false
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 hat = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
 
-
 kick_flag = 1
 hat_flag = 1
 hat3_flag = 0
 cymbal_open_flag = 0
 
 clap_flag = 1
-
-mero1_flag = 0
-mero2_flag = 0
 
 base_flag = 0
 
@@ -107,10 +103,10 @@ live_loop :mero1_hollow, sync: :met do
     ##| s = 8
     ##| with_fx :wobble, invert_wave: [1,0].tick, phase: 16, mix: 0 do
     ##|   synth :hollow, note: chord(:f3, :m7, invert: 0), release: r, sustain: s, amp: a
-    ##|   synth :hollow, note: chord(:f3-5, :m7, invert: 2), release: r, sustain: s, amp: a
+    ##|   ##| synth :hollow, note: chord(:f3-5, :m7, invert: 2), release: r, sustain: s, amp: a
     ##|   sleep s
     ##|   synth :hollow, note: chord(:g3, :m, invert: 0), release: r, sustain: s, amp: a
-    ##|   synth :hollow, note: chord(:g3-5, :m, invert: 0), release: r, sustain: s, amp: a
+    ##|   ##| synth :hollow, note: chord(:g3-5, :m, invert: 0), release: r, sustain: s, amp: a
     ##|   sleep s
     ##| end
   end
@@ -120,8 +116,8 @@ live_loop :mero1_slicer, sync: :met do
   ##| stop
   with_fx :reverb, mix: 0.8, room: 0.8 do
     
-    tonic = [:f3, :g3].look
-    name = [:m7, :m].look
+    tonic = :f3
+    name = :m7
     
     r = 6
     s = 16
@@ -142,7 +138,7 @@ live_loop :mero2, sync: :met do
     at = 0.01
     
     sleep 14
-    synth :hollow, note: chord(n, :m7, invert: 0), release: r, amp: 3
+    synth :hollow, note: chord(n, :m, invert: 0), release: r, amp: 3
     sleep 2
   end
 end
@@ -157,8 +153,8 @@ live_loop :mero2_slicer, sync: :met do
     sleep 14
     
     with_fx :slicer, phase: 0.5, mix: 0.5, invert_wave: 1 do
-      synth :dsaw, note: chord(n, :m7, invert: 0), release: r, attack: at, amp: 0.5
-      synth :sine, note: chord(n+12, :m7, invert: -2), release: r, amp: 1
+      synth :dsaw, note: chord(n, :m, invert: 0), release: r, attack: at, amp: 0.5
+      synth :sine, note: chord(n+12, :m, invert: -2), release: r, amp: 1
       sleep 2
     end
   end
