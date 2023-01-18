@@ -64,3 +64,12 @@ define :clap_double do
   end
   sleep 1-0.5-0.75
 end
+
+# 遠くで聞こえるようなclap
+define :long_clap do
+  sleep 1
+  with_fx :reverb, mix: 0.9,room: 0.9 do
+    sample clap, 0, amp: 0.8, beat_stretch: rrand(1, 2), rate: rrand(0.8, 2)
+  end
+  sleep 1
+end
