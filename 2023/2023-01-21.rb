@@ -1,19 +1,19 @@
+# twitter output https://twitter.com/ikemura23/status/1616778477679828992
 
 use_debug false
 
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
-##| hat = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
 
-kick_flag = 1
-hat_flag = 1
-hat3_flag = 1
+kick_flag = 0
+hat_flag = 0
+hat3_flag = 0
 cymbal_open_flag = 0
 
 clap_flag = 1
+snare_flag = 0
 ##| long_clap_flag = 1
 
-mero3_flag = 0
-base_flag = 1
+base_flag = 0
 
 live_loop :met do
   sleep 1
@@ -78,7 +78,7 @@ with_fx :reverb, room: 0.3 do
     ##| end
     
     live_loop :snare_soft, sync: :met do
-      
+      if snare_flag < 1 then stop end
       r = 2.5
       sample_name = :drum_snare_hard
       a = 0.5
