@@ -1,20 +1,21 @@
-# from https://youtu.be/RRYjhJHauno
+# output youtube https://youtu.be/WrfcHndL9XM
+# output twitter https://twitter.com/ikemura23/status/1621156968273707008
 
 use_debug false
 use_bpm 55
 
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
-kick_flag = 1
-hat_flag = 1
-hat3_flag = 1
+kick_flag = 0
+hat_flag = 0
+hat3_flag = 0
 cymbal_open_flag = 0
 
 clap_flag = 1
 
 mero2_flag = 0
 
-base_flag = 1
+base_flag = 0
 
 live_loop :met do
   sleep 1
@@ -24,7 +25,7 @@ with_fx :reverb, room: 0.3 do
   with_fx :lpf, cutoff: 110 do
     live_loop :kick, sync: :met do
       if kick_flag < 1 then stop end
-      sample :bd_tek, amp: 1.4, cutoff: 120 # :bd_fat :bd_tek
+      sample :bd_fat, amp: 1.4, cutoff: 120 # :bd_fat :bd_tek
       sleep 0.5
     end
     
