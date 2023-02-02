@@ -1,3 +1,4 @@
+# from https://youtu.be/RRYjhJHauno
 use_debug false
 use_bpm 50
 
