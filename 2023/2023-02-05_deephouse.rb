@@ -21,7 +21,7 @@ live_loop :met do
 end
 
 with_fx :reverb, room: 0.4 do
-  with_fx :lpf, cutoff: 110 do
+  with_fx :lpf, cutoff: 100 do
     live_loop :kick, sync: :met do
       if kick_flag < 1 then stop end
       sample :bd_zum, amp: 1, cutoff: 100
@@ -110,7 +110,7 @@ end
 live_loop :mero, sync: :met do
   if mero_flag < 1 then stop end
   
-  use_random_seed 6001 #6000 6001 6004 6005 6080
+  use_random_seed 6000 #6000 6001 6004 6005 6080
   
   rhythm = [1.5, 0.25, 1.5, 0.25, 0.25, 2, 0.5, 0.5, 0.25, 1]
   
