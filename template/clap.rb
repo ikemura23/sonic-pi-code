@@ -55,7 +55,7 @@ define :clap_double do
   num = 5
   
   sleep 0.5
-  with_fx :reverb do
+  with_fx :reverb, mix: 0.1 do
     sleep 0.375
     sample clap,num, amp: 1
     
