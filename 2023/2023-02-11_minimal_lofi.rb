@@ -1,3 +1,5 @@
+# output https://twitter.com/ikemura23/status/1624285121489805312
+
 use_debug false
 
 kick_flag = 1
