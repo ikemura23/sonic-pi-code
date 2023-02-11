@@ -6,7 +6,7 @@ cymbal_open_flag = 0
 
 clap_flag = 1
 
-strings1_flag = 0
+strings1_flag = 1
 strings2_flag = 1
 
 mero_flag = 0
@@ -93,7 +93,7 @@ live_loop :strings2, sync: :met do
   sleeps = [4,2,2]
   keys = [:fs3, :f3, :f3]
   tonics = [:M7, :m7, :m]
-  a = 2.5
+  a = 3
   3.times do |i|
     synth :hollow, note: chord(keys[i], tonics[i], invert: 3), sustain: sleeps[i], release: 0.1, amp: a
     synth :hollow, note: chord(keys[i], tonics[i], invert: 0), sustain: sleeps[i], release: 0.1, amp: a
@@ -101,7 +101,7 @@ live_loop :strings2, sync: :met do
   end
 end
 
-live_loop :mero, sync: :met do
+live_loop :mero_random, sync: :met do
   if mero_flag < 1 then stop end
   
   use_random_seed [5333, 8000].tick("mero")
