@@ -114,27 +114,28 @@ end
 live_loop :mero_random, sync: :met do
   if mero_flag < 1 then stop end
   
-  use_random_seed [1234, 432, 134, 5321].tick("mero")
+  use_random_seed [1234, 789, 908, 7890].tick("mero")
   
-  cd1 = chord(:d5,:m7,invert: [-1,0,2].choose).shuffle
-  cd2 = chord(:c5,:m7,invert: [-1,0,2].choose).shuffle
+  cd1 = chord(:g5,:m7,invert: 2).shuffle
+  cd2 = chord(:c5,:m7,invert: 2).shuffle
   
   sl = 0.75
   
   with_fx :lpf, cutoff: 70, amp: 1.3 do
     use_synth :subpulse
     
-    4.times do
+    8.times do
       play cd1.tick, release: 2
       sleep sl
     end
-    sleep 4-sl*4
-    4.times do
+    sleep 8-sl*8
+    8.times do
       play cd2.tick, release: 2
       sleep sl
     end
+    sleep 8-sl*8
   end
-  sleep 4-sl*4
+  
 end
 
 ## base ------------------------
