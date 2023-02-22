@@ -9,7 +9,7 @@ clap_flag = 1
 synth1_flag = 1
 synth2_flag = 1
 
-mero_flag = 1
+mero_flag = 0
 
 base_flag = 1
 
@@ -20,14 +20,18 @@ end
 with_fx :reverb, room: 0.2 do
   live_loop :kick, sync: :met do
     if kick_flag < 1 then stop end
-    15.times do
-      sample :bd_tek, amp: 1, lpf: 110
-      sleep 0.5
+    16.times do |i|
+      if i < 15 then
+        sample :bd_tek, amp: 1, lpf: 110
+        sleep 0.5
+      else
+        sample :bd_tek, amp: 1, lpf: 110
+        sleep 0.25
+        sample :bd_tek, amp: 1, lpf: 110
+        sleep 0.25
+      end
     end
-    sample :bd_tek, amp: 1, lpf: 110
-    sleep 0.25
-    sample :bd_tek, amp: 1, lpf: 110
-    sleep 0.25
+    
   end
   
   with_fx :lpf, cutoff: 100 do
