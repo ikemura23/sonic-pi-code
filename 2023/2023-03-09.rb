@@ -9,9 +9,9 @@ clap_flag = 1
 synth1_flag = 1
 synth2_flag = 0
 
-mero_flag = 1
+mero_flag = 0
 
-base_flag = 1
+base_flag = 0
 
 live_loop :met do
   sleep 1
@@ -31,7 +31,6 @@ with_fx :reverb, room: 0.2 do
         sleep 0.25
       end
     end
-    
   end
   
   with_fx :lpf, cutoff: 100 do
@@ -112,7 +111,7 @@ live_loop :synth2, sync: :met do
   sl = sus
   ##| with_fx :slicer, phase: 0.5, mix: 0.2, invert_wave: 1 do
   
-  synth :hollow, note: chord(:b3, :M7, invert: 0), sustain: sus,release: rel, attack: atk, amp: 3
+  synth :hollow, note: chord(:b3, :m7, invert: 0), sustain: sus,release: rel, attack: atk, amp: 3
   ##| synth :hollow, note: chord(:b3+7, :M7, invert: 0), sustain: sus,release: rel, amp: 3
   sleep sl
   
