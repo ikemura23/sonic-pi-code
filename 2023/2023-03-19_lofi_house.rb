@@ -1,3 +1,4 @@
+#output https://twitter.com/ikemura23/status/1637245967157297152
 use_debug false
 
 kick_flag = 1
