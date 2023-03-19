@@ -1,8 +1,8 @@
 use_debug false
 
 kick_flag = 1
-hat_flag = 0
-cymbal_open_flag = 1
+hat_flag = 1
+cymbal_open_flag = 0
 
 clap_flag = 1
 
@@ -37,16 +37,14 @@ with_fx :reverb, room: 0.2 do
     live_loop :hhc, sync: :met do
       if hat_flag < 1 then stop end
       
-      ##| sleep 0.125
+      sleep 0.25
+      sample :drum_cymbal_closed, amp: 1.2, rate: 1.7
+      sleep 0.25
+      sleep 0.25
       sample :drum_cymbal_closed, amp: 1.2, rate: 1.7
       sleep 0.125
-      sleep 0.125
       sample :drum_cymbal_closed, amp: 1.2, rate: 1.7
       sleep 0.125
-      sample :drum_cymbal_closed, amp: 1.2, rate: 1.7
-      sleep 0.125
-      
-      ##| sleep 0.5
     end
     
     live_loop :cymbal_open, sync: :met do
@@ -87,8 +85,8 @@ live_loop :synth1, sync: :met do
     with_fx :lpf, cutoff: 80, amp: 1 do
       ##| with_fx :wobble, wave: 0, invert_wave: 1, phase: 10, mix: 0.2 do
       with_fx :slicer, phase: 0.5, mix: 0.3, invert_wave: 1 do
-        synth :dsaw, note: chord(:g4, :m, invert: 0), sustain: sus, release: rel, amp: 0.8, attack: 0.1
-        synth :dsaw, note: chord(:g4-5, :m, invert: 0), sustain: sus,release: rel, amp: 0.8, attack: 0.1
+        synth :dsaw, note: chord(:g4, :m, invert: [0,0].tick("1")), sustain: sus, release: rel, amp: 0.8, attack: 0.1
+        synth :dsaw, note: chord(:g4-5, :m, invert: [0,0].look), sustain: sus,release: rel, amp: 0.8, attack: 0.1
         sleep sl
       end
       ##| sus = 7
