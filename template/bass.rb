@@ -13,7 +13,8 @@ live_loop :bass_loop, sync: :bd do
   ##| bass4 :c2
   ##| bass5 :g1
   ##| bass6 :g2
-  bass7 :f2
+  ##| bass7 :f2
+  bass8
 end
 
 ## ハネるタイプ
@@ -159,6 +160,22 @@ define :bass7 do |note|
       sleep 0.125
       synth :dsaw, note: c.choose, sustain: 0.125, release: 0
       sleep 0.125
+    end
+  end
+end
+
+define :bass8 do
+  use_random_seed 124 # 890 780 786 124
+  sl = [0.375, 0.375, 0.375, 0.375, 0.125, 0.375,
+        0.375, 0.25, 0.25, 0.25, 0.125, 0.25,0.25, 0.25]
+  c = chord(:g1, :m, invert: 0)
+  with_fx :reverb, mix: 0.5, room: 0.7, amp: 1.5 do
+    with_fx :lpf, cutoff: 85 do
+      sl.size.times do
+        
+        synth :dpulse, note: c.choose, release: 0.2
+        sleep sl.tick
+      end
     end
   end
 end
