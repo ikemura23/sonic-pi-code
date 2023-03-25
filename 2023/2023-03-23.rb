@@ -4,7 +4,7 @@ use_bpm 67
 bd_play = 1
 hat_play = 1
 
-synth_play = 1
+synth_play = 0
 bass_play = 1
 elec_play = 0
 
@@ -17,8 +17,9 @@ end
 
 live_loop :bd, sync: :met do
   if bd_play < 1 then stop end
-  sleep 0.5
+  
   sample :bd_tek, cutoff: 100, amp: 1.2
+  sleep 0.5
 end
 
 with_fx :lpf, cutoff: 110 do
@@ -123,7 +124,7 @@ with_fx :lpf, cutoff: 110 do
 end
 
 ## bass ##
-live_loop :bass_loop, sync: :bd do
+live_loop :bass_loop, sync: :met do
   if bass_play < 1 then stop end
   bass1 :f2
 end
