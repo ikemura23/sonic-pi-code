@@ -1,3 +1,4 @@
+#output https://twitter.com/ikemura23/status/1639853321535246336
 
 use_debug false
 use_bpm 65
