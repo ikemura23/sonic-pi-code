@@ -1,4 +1,5 @@
 # music title: vispas
+# output: https://twitter.com/ikemura23/status/1643802707768274944
 # background movie: https://www.youtube.com/watch?v=OeLF0jI9S3k
 use_debug false
 use_bpm 65
