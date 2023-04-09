@@ -1,3 +1,5 @@
+# output twitter https://twitter.com/ikemura23/status/1644896300037718018
+# background movie https://www.youtube.com/watch?v=wViaZrGMzoI
 
 use_debug false
 use_bpm 66
