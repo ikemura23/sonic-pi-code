@@ -1,3 +1,5 @@
+# output twitter https://twitter.com/ikemura23/status/1648201147134648321
+# back movie https://youtu.be/5plSpjxDjPY
 
 use_debug false
 use_bpm 75
@@ -144,4 +146,3 @@ live_loop :synth1, sync: :met do
   ##| end
   
 end
-
