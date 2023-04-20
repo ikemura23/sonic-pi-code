@@ -4,10 +4,13 @@ use_bpm 75
 
 bd_play = 0
 
-cymbal_flag = 0
+ride_cymbal_play_flag = 1
+ride_cymbal_type = 0
+
 cymbal_open_flag = 0
 
 synth1_play = 1
+synth2_play = 0
 
 amen_flag = 0
 elec_play = 0
@@ -29,7 +32,6 @@ live_loop :bd, sync: :met do
   _symbol = :bd_zum
   
   use_sample_defaults cutoff: 100, rate: 0.8
-  
   
   sample _symbol
   sleep 0.5
@@ -54,28 +56,32 @@ with_fx :reverb, room: 0.4 do
     sleep 0.25
   end
   
-  live_loop :cymbal, sync: :met do
-    if cymbal_flag < 1 then stop end
+  live_loop :ride_cymbal, sync: :met do
+    if ride_cymbal_play_flag < 1 then stop end
     
-    use_sample_defaults beat_stretch: 1.8, amp: 0.25
+    use_sample_defaults beat_stretch: 1.8, amp: 0.13
     
-    sample :drum_cymbal_hard, amp: 0.1
-    sleep 0.25
-    sample :drum_cymbal_hard, amp: 0.25
-    sleep 0.25
+    if ride_cymbal_type < 1 then
+      sample :drum_cymbal_hard, amp: 0.13/2
+      sleep 0.25
+      sample :drum_cymbal_hard
+      sleep 0.25
+    else
+      sample :drum_cymbal_hard
+      sleep 0.25
+      sample :drum_cymbal_hard
+      sleep 0.25
+      
+      sample :drum_cymbal_hard
+      sleep 0.25
+      sample :drum_cymbal_hard, amp: 0.115
+      sleep 0.125
+      sample :drum_cymbal_hard, amp: 0.115
+      sleep 0.125
+    end
     
     
-    ##| sample :drum_cymbal_hard
-    ##| sleep 0.25
-    ##| sample :drum_cymbal_hard
-    ##| sleep 0.25
     
-    ##| sample :drum_cymbal_hard
-    ##| sleep 0.25
-    ##| sample :drum_cymbal_hard, amp: 0.2
-    ##| sleep 0.125
-    ##| sample :drum_cymbal_hard, amp: 0.2
-    ##| sleep 0.125
   end
   
   live_loop :sample_loop_safari, sync: :met do
@@ -86,9 +92,9 @@ with_fx :reverb, room: 0.4 do
 end
 
 live_loop :sample_amen_full, sync: :met do
-  ##|
+  
   if amen_flag < 1 then stop end
-  with_fx :hpf, cutoff: 70, amp: 0.6 do
+  with_fx :hpf, cutoff: 90, amp: 0.3 do
     
     sample :loop_amen_full, beat_stretch: 8
     sleep 8
@@ -101,12 +107,16 @@ end
 
 live_loop :sample_voice, sync: :met do
   if voice_play < 1 then stop end
-  with_fx :echo, phase: 0.25, decay: 2, pre_amp: 0.8  do
-    sleep 2
-    sample :loop_weirdo, start: 0.14, finish: 0.22
-    sleep 0.75
-    sample :loop_weirdo, start: 0.14, finish: 0.22
-    sleep 6-0.75
+  use_sample_defaults amp: 0.3, rate: -1
+  
+  with_fx :hpf, cutoff: 80 do
+    with_fx :echo, phase: 0.25, decay: 3 do
+      sleep 2
+      sample :loop_weirdo, start: 0.14, finish: 0.22
+      sleep 0.75
+      sample :loop_weirdo, start: 0.14, finish: 0.22
+      sleep 6-0.75
+    end
   end
 end
 
@@ -216,6 +226,27 @@ live_loop :synth1, sync: :met do
         
         ##| synth :dsaw, note: chord(:g3, :m7)
         synth :subpulse, note: chord(:g3, :m7, invert: 2)
+        sleep 8
+        
+      end
+    end
+  end
+end
+
+live_loop :synth2, sync: :met do
+  if synth2_play < 1 then stop end
+  use_synth_defaults release: 0.3, sustain: 8, amp: 1, attack: 0.12, cutoff: 90
+  
+  key = :b3
+  
+  with_fx :bpf, centre: 80, mix: 0.9 do
+    with_fx :wobble, invert_wave: 1, phase: 16, wave: 0, mix: 0.2 do
+      
+      with_fx :slicer, phase: 0.375, mix: 0.1 do
+        synth :dsaw, note: chord(:fs3, :M7)
+        sleep 8
+        
+        synth :dsaw, note: chord(:g3, :m7)
         sleep 8
         
       end
