@@ -59,10 +59,10 @@ with_fx :reverb, room: 0.4 do
   live_loop :ride_cymbal, sync: :met do
     if ride_cymbal_play_flag < 1 then stop end
     
-    use_sample_defaults beat_stretch: 1.8, amp: 0.13
+    use_sample_defaults beat_stretch: 1.8, amp: 0.17
     
     if ride_cymbal_type < 1 then
-      sample :drum_cymbal_hard, amp: 0.13/2
+      sample :drum_cymbal_hard, amp: 0.17/3
       sleep 0.25
       sample :drum_cymbal_hard
       sleep 0.25
@@ -212,7 +212,8 @@ end
 
 live_loop :synth1, sync: :met do
   if synth1_play < 1 then stop end
-  use_synth_defaults release: 0.3, sustain: 8, amp: 1, attack: 0.12, cutoff: 90
+  _amp = 1.5
+  use_synth_defaults release: 0.3, sustain: 8, amp: _amp, attack: 0.12, cutoff: 90
   
   key = :b3
   
