@@ -1,4 +1,5 @@
 # 2023/05/11 drum'n'bass
+# Title: Heart Racer
 
 hat_loops = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_hat\ loops"
 
@@ -8,12 +9,12 @@ amen_brakes_loops = "/Users/k_ikemura/Music/sonic_pi/Amen\ Breaks\ Compilation/A
 use_debug false
 use_bpm 90
 
-bd_play = 1
+bd_play = 0
 
-hat_loops_play = 1
-amen_brakes_loops_play = 0
+hat_loops_play = 0
+amen_brakes_loops_play = 1
 
-synth_lead_play = 1
+synth_lead_play = 0
 
 bass_play = 1
 
