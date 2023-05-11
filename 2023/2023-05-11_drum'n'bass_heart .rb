@@ -1,5 +1,6 @@
 # 2023/05/11 drum'n'bass
 # Title: Heart Racer
+# Background Movie: https://www.youtube.com/watch?v=DSQiMqyPdeI
 
 hat_loops = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_hat\ loops"
 
@@ -13,6 +14,8 @@ bd_play = 0
 
 hat_loops_play = 0
 amen_brakes_loops_play = 1
+
+elec_blip_play = 0
 
 synth_lead_play = 0
 
@@ -63,6 +66,7 @@ with_fx :reverb, room: 0.2, mix: 0.5 do
   end
 end
 
+# electric sample ############################################
 
 live_loop :misc_cineboom, sync: :met do
   sleep 16
@@ -71,6 +75,17 @@ live_loop :misc_cineboom, sync: :met do
   sample :misc_cineboom, beat_stretch: 12, start: 0, finish: 0.2, amp: 1.5
   sleep 2.4
   
+end
+
+live_loop :misc_cineboom, sync: :met do
+  use_sample_defaults cutoff: 120, rate: 0.9, amp: 1
+  if elec_blip_play < 1 then stop end
+  sleep 2.5
+  sample :elec_blip
+  sleep 0.75
+  sample :elec_blip
+  
+  sleep 8-2.5-0.75
 end
 
 ## bass ############################################
