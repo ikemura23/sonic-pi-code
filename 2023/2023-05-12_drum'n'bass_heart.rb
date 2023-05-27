@@ -1,5 +1,6 @@
 # 2023/05/12 drum'n'bass
 # Title: Heart Racer 2
+# Output: https://twitter.com/ikemura23/status/1656864204463439873
 # Background Movie: https://www.youtube.com/watch?v=T6ixE2BZHeI
 
 hat_loops = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_hat\ loops"
