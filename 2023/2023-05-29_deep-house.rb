@@ -1,6 +1,6 @@
 # Title: Deep House Jam - 2023-05-29
-# Output url: 
-# Background Movie: 
+# Output url: https://twitter.com/ikemura23/status/1663182987624853504
+# Background Movie: https://www.youtube.com/watch?v=311Ts_OJvDw
 
 use_debug false
 use_bpm 67
@@ -17,7 +17,7 @@ bass_play = 1
 
 snare_play = 1
 
-voice_play = 1
+voice_play = 0
 
 ######################
 
