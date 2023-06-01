@@ -1,6 +1,6 @@
 # Title: Alone With You - 2023-05-29
 # Original: https://music.youtube.com/watch?v=uqi1ORDmsXs&feature=share
-# Output url: TBD
+# Output url: https://twitter.com/ikemura23/status/1664088343796408320
 # Background Movie: https://youtu.be/ylAnbG3WN9k
 
 use_debug false
