@@ -1,7 +1,7 @@
-# Title: Do You Feel It Too? - 2023/06/09
-# Output url:
+# Title: Do You Feel It Too? - 2023/06/08
+# Output url: https://twitter.com/ikemura23/status/1666958773817315328
 # Original: https://music.youtube.com/watch?v=fuvxwQGHYzo&feature=share
-# Background Movie:
+# Background Movie: https://youtu.be/ylAnbG3WN9k?t=1404
 
 use_debug false
 use_bpm 60
@@ -10,9 +10,8 @@ use_bpm 60
 
 bd_play = 0
 hat_close_play = 0
-hat_open_play = 0
-
-snare_play = 1
+##| hat_open_play = 0
+snare_play = 0
 
 synth1_play = 1
 synth2_play = 1
@@ -72,12 +71,12 @@ with_fx :lpf, cutoff: 100 do
         end
       end
       
-      live_loop :hat_open, sync: :met do
-        if hat_open_play < 1 then stop end
-        sleep 0.25
-        sample :drum_cymbal_open, amp: 0.25, beat_stretch: 1.8, finish: 0.125, hpf: 90, rate: 1.1
-        sleep 0.25
-      end
+      ##| live_loop :hat_open, sync: :met do
+      ##|   if hat_open_play < 1 then stop end
+      ##|   sleep 0.25
+      ##|   sample :drum_cymbal_open, amp: 0.25, beat_stretch: 1.8, finish: 0.125, hpf: 90, rate: 1.1
+      ##|   sleep 0.25
+      ##| end
       
       live_loop :snare_loop, sync: :met do
         if snare_play < 1 then stop end
