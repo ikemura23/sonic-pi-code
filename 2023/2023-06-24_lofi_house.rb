@@ -1,7 +1,7 @@
 # Title: Reveiller
 # Original Song: https://music.youtube.com/watch?v=7A6f4YFHA2I&feature=share
-# Output Url:
-# Background
+# Output Url: https://twitter.com/ikemura23/status/1672843990973173765
+# Background: https://youtu.be/uuRY0_kXksU?t=761
 
 use_debug false
 use_bpm 62
@@ -30,46 +30,46 @@ end
 
 ## drum ######################
 
-with_fx :lpf, cutoff: 100 do
-  
-  live_loop :kick_sample, sync: :met do
-    if kick_play < 1 then stop end
-    use_sample_defaults amp: 1.4
-    3.times do
-      sample :bd_tek
-      sleep 0.375
-    end
-    
-    sleep 2-0.375*3-0.25
-    
-    sample :bd_tek, amp: [0,1.4].tick("bd")
-    sleep 0.25
+##| with_fx :lpf, cutoff: 100 do
+
+live_loop :kick_sample, sync: :met do
+  if kick_play < 1 then stop end
+  use_sample_defaults amp: 1.4
+  3.times do
+    sample :bd_tek
+    sleep 0.375
   end
   
+  sleep 2-0.375*3-0.25
   
-  live_loop :clap, sync: :met do
-    if clap_play < 1 then stop end
+  sample :bd_tek, amp: [0,1.4].tick("bd")
+  sleep 0.25
+end
+
+
+live_loop :clap, sync: :met do
+  if clap_play < 1 then stop end
+  
+  with_fx :reverb do
+    use_sample_defaults rate: 1.2
+    ## Pattern 1
     
-    with_fx :reverb do
-      use_sample_defaults rate: 1.2
-      ## Pattern 1
-      
-      ##| sleep 0.5
-      ##| sample clap_sample, 0
-      ##| sleep 0.5
-      
-      ## Pattern 2
-      
-      sleep 3.5
-      sample clap_sample, 0
-      sleep 0.25
-      sample clap_sample, 0, amp: [1,0,1,1].tick('clap1')
-      sleep 0.125
-      sample clap_sample, 0, amp: [1,0,1,0].tick('clap2')
-      sleep 0.125
-    end
+    ##| sleep 0.5
+    ##| sample clap_sample, 0
+    ##| sleep 0.5
+    
+    ## Pattern 2
+    
+    sleep 3.5
+    sample clap_sample, 0
+    sleep 0.25
+    sample clap_sample, 0, amp: [1,0,1,1].tick('clap1')
+    sleep 0.125
+    sample clap_sample, 0, amp: [1,0,1,0].tick('clap2')
+    sleep 0.125
   end
 end
+##| end
 
 live_loop :sample_hat_loops, sync: :met do
   if hat_play < 1 then stop end
@@ -169,7 +169,7 @@ end
 live_loop :synth2, sync: :met do
   if synth2_play < 1 then stop end
   
-  use_synth :dpulse
+  use_synth :dtri
   use_synth_defaults release: 1.8, sustain: 0, amp: 1, attack: 0.2,
     cutoff: 75
   s = 2
@@ -209,15 +209,15 @@ live_loop :synth3, sync: :met do
   ]
   
   with_fx :hpf, mix: 0.2, amp: a do
-    with_fx :reverb, mix: 0.7, room: 0.7 do
-      with_fx :distortion, distort: 0.3 do
-        
-        for chord in chords do
-          play chord
-          sleep s
-        end
-        
-      end
+    ##| with_fx :reverb, mix: 0.7, room: 0.7 do
+    ##| with_fx :distortion, distort: 0.3 do
+    
+    for chord in chords do
+      play chord
+      sleep s
     end
+    
+    ##| end
+    ##| end
   end
 end
