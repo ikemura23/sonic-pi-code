@@ -1,6 +1,6 @@
 # Title: Blossom
 # Original Song: https://music.youtube.com/watch?v=fEhSSy3Fosk&feature=share
-# Output Url:
+# Output Url: https://twitter.com/ikemura23/status/1674805398401069056
 # Background: https://youtu.be/uuRY0_kXksU?t=761
 
 use_debug false
