@@ -9,6 +9,7 @@ use_bpm 62
 hat_loops = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/drum_loops/LCC_hat loops"
 clap_sample = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/one shots/LCC_Claps"
 stream = "/Users/k_ikemura/Music/sonic_pi/Nature"
+## stream sound donload => https://drive.google.com/file/d/1gWo7RA_ZyB6HS49f2aDU5CEbuVk5wqU9/view?usp=drive_link
 
 ## flag ######################
 
