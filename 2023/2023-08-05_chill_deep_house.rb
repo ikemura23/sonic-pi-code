@@ -1,5 +1,5 @@
 # original: https://soundcloud.com/tomvmusic2/when-we-love
-# Output: 
+# Output: https://twitter.com/ikemura23/status/1687721833464987648
 # Background movie: https://youtu.be/YjUkT-Ufrv8
 
 use_debug false
