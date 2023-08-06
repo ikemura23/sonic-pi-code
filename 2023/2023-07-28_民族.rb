@@ -13,6 +13,11 @@ hat_close_play = 1
 hat_open_play = 0
 snare_play = 1
 
+synth_sample_play = 0
+
+vox1_play = 0
+vox2_play = 0
+
 
 ######################
 
@@ -169,8 +174,8 @@ live_loop :bass, sync: :met do
   
 end
 
-live_loop :synth, sync: :met do
-  ##| stop
+live_loop :synth_sample, sync: :met do
+  if synth_sample_play < 1 then stop end
   use_sample_defaults beat_stretch: 8, amp: 0.5, finish: 0.25, lpf: 100
   
   sleep 4
@@ -187,14 +192,15 @@ end
 
 live_loop :vox1, sync: :met do
   ##| stop
+  if vox1_play < 1 then stop end
   num = 1 #1 4 5
   sample vox_loop, num ,beat_stretch: 4, amp: 0.6
-  sleep 8
+  sleep 4
   
 end
 
 live_loop :vox2, sync: :met do
-  ##| stop
+  if vox2_play < 1 then stop end
   num = 4 #1 4 5
   sample vox_loop, num ,beat_stretch: 4, amp: 0.7
   sleep 8
