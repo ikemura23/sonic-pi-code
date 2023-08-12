@@ -1,4 +1,4 @@
-# output twitter:
+# output twitter: https://twitter.com/ikemura23/status/1690366758962798592
 # background movie: https://www.youtube.com/watch?v=S9rUAaDd4B4
 
 bass_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/bass_loops"
