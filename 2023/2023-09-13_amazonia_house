@@ -1,5 +1,5 @@
 # output twitter:
-# background movie:
+# background movie: https://youtu.be/S9rUAaDd4B4?si=vipm484u8wUG_HMI
 
 bass_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/bass_loops"
 synth_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/synth_loops"
@@ -13,14 +13,14 @@ hat_close_play = 0
 hat_open_play = 0
 snare_play = 1
 
-elec_pop_play = 1
+elec_pop_play = 0
 
 bass_play = 0
 
 voice1_play = 1
 voice2_play = 0
 
-voice_patern = 2 # 1 or 2
+voice_patern = 1 # 1 or 2
 
 synth_sample_play = 0
 
@@ -149,7 +149,7 @@ end
 
 # synth ###################
 
-synth_num = 13 # 8 9 10 13 14 15 3 2
+synth_num = 8 # 8 9 10 13 14 15 3 2
 
 live_loop :synth_sample, sync: :met do
   ##| stop
