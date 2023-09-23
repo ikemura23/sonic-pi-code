@@ -14,11 +14,12 @@ hat_close_play = 1
 hat_open_play = 0
 snare_play = 1
 
-glitch_perc_play = 0
+glitch_perc_play = 1
 
 elec_pop_play = 0
 
-bass_play = 1
+bass_1_play = 1
+bass_2_play = 0
 
 voice1_play = 0
 voice2_play = 0
@@ -83,11 +84,12 @@ with_fx :reverb, room: 0.3 do
   end
   
   live_loop :glitch_perc, sync: :met do
-    if glitch_perc_play < 1 then stop end
     use_sample_defaults lpf: 80, amp: 0.9, finish: 0.12
     
-    sample :glitch_perc1, rate: 0.7
-    sample :glitch_perc1, rate: 0.5
+    if glitch_perc_play > 0 then
+      sample :glitch_perc1, rate: 0.7
+      sample :glitch_perc1, rate: 0.5
+    end
     sleep 2
   end
   
@@ -144,11 +146,12 @@ end
 
 # bass ################## bass
 
-num = 13 #2 3 5 13 17
-
 live_loop :bass1, sync: :met do
-  if bass_play < 1 then stop end
-  use_sample_defaults amp: 1.1
+  if bass_1_play < 1 then stop end
+  use_sample_defaults amp: 1.4
+  
+  num = 13 #2 5 13 17
+  
   with_fx :reverb do
     sample bass_loop, num ,beat_stretch: 8, start: 0.125,  finish: 0.13
     sleep 0.375
@@ -156,6 +159,24 @@ live_loop :bass1, sync: :met do
     sleep 2-0.375
   end
 end
+
+live_loop :bass_2, sync: :met do
+  if bass_2_play < 1 then stop end
+  use_synth_defaults release: 0
+  a = 0.2
+  
+  synth :fm, note: :f2, sustain: 0.35
+  synth :chiplead, note: :f1, sustain: 0.35, amp: a
+  sleep 0.375
+  synth :fm, note: :f2, sustain: 0.2
+  synth :chiplead, note: :f1, sustain: 0.2, amp: a
+  sleep 0.125
+  sleep 0.25
+  synth :fm, note: :f2+3, sustain: 0.2
+  synth :chiplead, note: :f1+3, sustain: 0.25, amp: a
+  sleep 0.25
+end
+
 
 # synth ###################
 
