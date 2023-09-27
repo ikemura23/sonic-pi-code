@@ -1,5 +1,5 @@
 # original music: https://youtu.be/sjaNO0e1SL4?si=NwYeJfMSG9QxwRLL&t=410
-# output twitter:
+# output twitter: https://twitter.com/ikemura23/status/1706838062263918644
 # background movie: https://youtu.be/P-roMFezL3c?si=zfuk4WLDIRqd0oXc
 
 bass_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/bass_loops"
