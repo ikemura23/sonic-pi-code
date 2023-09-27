@@ -4,6 +4,7 @@
 
 bass_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/bass_loops"
 synth_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/synth_loops"
+vox_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/vox loops"
 
 use_debug false
 use_bpm 64
@@ -15,7 +16,6 @@ hat_open_play = 0
 snare_play = 1
 
 glitch_perc_play = 1
-
 elec_pop_play = 0
 
 bass_1_play = 1
@@ -24,9 +24,12 @@ bass_2_play = 0
 voice1_play = 0
 voice2_play = 0
 
-voice_patern = 1 # 1 or 2
+voice_patern = 2 # 1 or 2
 
 synth_sample_play = 0
+
+vox1_play = 0
+vox2_play = 0
 
 # metronome #####################
 
@@ -72,12 +75,11 @@ with_fx :reverb, room: 0.3 do
     
     if snare_play < 1 then stop end
     
-    r=2
-    use_sample_defaults amp: 1, cutoff: 100, rate: r
+    use_sample_defaults amp: 0.7, cutoff: 100, rate: 1.8, hpf: 60
     
     sleep 0.5
     
-    sample :sn_generic, rate: r+1
+    sample :sn_generic, rate: 3
     sample :sn_generic, start: 0.02, pan: 0.2
     
     sleep 0.5
@@ -96,21 +98,23 @@ with_fx :reverb, room: 0.3 do
   live_loop :elec_pop, sync: :met do
     if elec_pop_play < 1 then stop end
     
-    rt=2
+    use_sample_defaults rate: 2, lpf: 100, amp: 0.6
+    sleep 1
     
-    use_sample_defaults rate: rt, lpf: 90, amp: 0.5
-    sleep 0.25
     2.times do
-      sample :elec_pop
-      sleep 0.125
+      sleep 0.25
+      2.times do
+        sample :elec_pop
+        sleep 0.125
+      end
     end
-    ##| sleep 0.25
+    
   end
   
   
   live_loop :safari, sync: :met do
     ##| stop
-    sample :loop_safari, beat_stretch: 8, amp: 1
+    sample :loop_safari, beat_stretch: 8, amp: 1.1
     sleep 8
   end
   
@@ -130,10 +134,10 @@ with_fx :reverb, room: 0.3 do
   end
   
   live_loop :tabla_tas, sync: :met do
-    stop
+    ##| stop
     use_sample_defaults amp: 0.6, lpf: 130
     
-    sample :tabla_tas2
+    ##| sample :tabla_tas2
     sleep 0.25
     ##| sample :tabla_te2
     sleep 0.25
@@ -144,13 +148,13 @@ with_fx :reverb, room: 0.3 do
   end
 end
 
-# bass ################## bass
+# bass ##################
 
 live_loop :bass1, sync: :met do
   if bass_1_play < 1 then stop end
-  use_sample_defaults amp: 1.4
+  use_sample_defaults amp: 1.5
   
-  num = 13 #2 5 13 17
+  num = 13
   
   with_fx :reverb do
     sample bass_loop, num ,beat_stretch: 8, start: 0.125,  finish: 0.13
@@ -180,7 +184,7 @@ end
 
 # synth ###################
 
-synth_num = 9 # 8 9 10 13 14 15 3 2
+synth_num = 9 # 9 10 13 14 15
 
 live_loop :synth_sample, sync: :met do
   ##| stop
@@ -286,6 +290,29 @@ live_loop :sample_voice, sync: :met do
       sample :loop_weirdo
       sleep 0.375
       sleep 1-0.375*2
+    end
+  end
+end
+
+with_fx :reverb, mix: 0.5, mix: 0.5 do
+  live_loop :vox1, sync: :met do
+    
+    if vox1_play < 1 then stop end
+    vox1_num = 1
+    
+    sleep 4
+    sample vox_loop, vox1_num ,beat_stretch: 4, amp: 0.6
+    sleep 4
+    
+  end
+  
+  live_loop :vox2, sync: :met do
+    if vox2_play < 1 then stop end
+    vox1_num2 = 5
+    with_fx :reverb do
+      sleep 1
+      sample vox_loop, vox1_num2 ,beat_stretch: 4, amp: 0.7, finish: 0.3
+      sleep 3
     end
   end
 end
