@@ -1,5 +1,5 @@
 use_bpm 50
-use_random_seed 2000
+
 
 live_loop :met do
   sleep 0.5
@@ -7,6 +7,13 @@ end
 live_loop :hat, sync: :met do
   ##| sample :hat_bdu
   sleep 1
+end
+
+live_loop :loop_amen, sync: :met do
+  with_fx :reverb, mix: 0.7, room: 0.8 do
+    sample :loop_breakbeat, beat_stretch: 4
+    sleep 4
+  end
 end
 
 live_loop :synt_hollo, sync: :met do
@@ -42,9 +49,14 @@ live_loop :piano, sync: :met do
   
   use_synth :piano
   use_synth_defaults amp: 0.5
+  use_random_seed [1234,2000].tick
   
-  with_fx :reverb, mix: 0.7, room: 1 do
-    play c.tick
-    sleep 1
+  4.times do
+    
+    with_fx :reverb, mix: 0.7, room: 1 do
+      play c.tick
+      sleep 1
+    end
   end
+  
 end
