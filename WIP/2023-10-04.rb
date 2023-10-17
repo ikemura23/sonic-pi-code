@@ -1,3 +1,6 @@
+# Original: https://www.youtube.com/live/VaHx32PHSg0?si=zVgVl3ozjLsogiXG&t=2275
+# Background movie: https://www.youtube.com/watch?v=qmMR2yfUUZw
+# Output Twitter:
 
 use_bpm 62
 
