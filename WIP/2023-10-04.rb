@@ -1,5 +1,4 @@
 
-## https://www.youtube.com/live/VaHx32PHSg0?si=zVgVl3ozjLsogiXG&t=2275
 use_bpm 62
 
 live_loop :met do
@@ -7,10 +6,32 @@ live_loop :met do
 end
 
 live_loop :kick, sync: :met do
-  stop
-  a = 1
+  ##| stop
+  use_sample_defaults amp: 1.1, lpf: 90
+  n = :bd_ada # :bd_haus :bd_tek :bd_ada
   
-  sample :bd_tek, rate: 1, amp: a, lpf: 110
+  7.times do
+    sample n
+    sleep 0.5
+  end
+  
+  sample :bd_tek, amp: 0.8
+  sleep 0.25
+  
+  sample n
+  sleep 0.25
+  
+  6.times do
+    sample n
+    sleep 0.5
+  end
+  
+  sample n
+  sleep 0.25
+  sample n, amp: 0.8
+  sleep 0.25
+  
+  sample n
   sleep 0.5
 end
 
@@ -124,7 +145,7 @@ live_loop :bass, sync: :met do
   use_synth :fm
   
   8.times do |i|
-    key = if i<4 then :d2 else :d2 end
+    key = if i<4 then :d2 else :d2-2 end
     
     sleep 0.25
     play key
