@@ -1,5 +1,5 @@
 # original music: https://music.youtube.com/watch?v=NleZrgAlSvI&si=Bj1kR6Oq_VROLD_b
-# output twitter:
+# output twitter: https://twitter.com/ikemura23/status/1714126440801989116
 # background movie: https://www.youtube.com/watch?v=355zf663QUg
 
 
