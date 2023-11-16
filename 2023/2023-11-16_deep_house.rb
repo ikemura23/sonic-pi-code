@@ -1,4 +1,5 @@
 # inspier https://music.youtube.com/watch?v=AHmHJKuN1Wc&si=szT8dPFPnHrIbKuo
+# Twitter output: https://twitter.com/ikemura23/status/1724972789818700187
 
 use_bpm 64
 
