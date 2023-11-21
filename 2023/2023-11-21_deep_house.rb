@@ -1,6 +1,8 @@
+# Inspire: https://youtu.be/jY3Xd8IajOg?si=zcNra4JAGYxQ6GoA
+
 use_bpm 62
 
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+claps = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 drum_play = 1
 drum_hat_clap = 1
@@ -11,7 +13,7 @@ synth2_play = 0
 
 bass_play = 0
 hollow_play = 0
-pico_play = 1
+pico_play = 0
 
 live_loop :met do
   sleep 0.5
@@ -48,7 +50,7 @@ live_loop :clap1, sync: :met do
   
   sleep 0.5
   with_fx :reverb, mix: 0.4 do
-    sample clap, 0, amp: 1, lpf: 120, rate: 0.8
+    sample claps, 0, amp: 1, lpf: 120, rate: 0.8
   end
   sleep 0.5
 end
@@ -94,9 +96,8 @@ end
 live_loop :synth1, sync: :met do
   
   if synth1_play < 1 then stop end
-  stop
   use_synth :dsaw
-  use_synth_defaults release: 0.5, cutoff: 90
+  use_synth_defaults release: 0.5, cutoff: 100, amp: 1.0
   
   with_fx :reverb, mix: 0.7, room: 0.5 do
     with_fx :wobble, phase: 0.5, invert_wave: 0, mix: 0.3, wave: 0 do
@@ -111,12 +112,12 @@ end
 live_loop :synth2, sync: :met do
   
   if synth2_play < 1 then stop end
-  use_synth :dpulse # :prophet :dsaw
+  use_synth :dsaw # :supersaw :dsaw
   use_synth_defaults release: 0.25, cutoff: 100, amp: 0.8
   
   with_fx :reverb, mix: 0.7, room: 0.5 do
     with_fx :echo, phase: 0.25, mix: 0.25, decay: 1.5 do
-      with_fx :wobble, phase: 0.5, invert_wave: 0, mix: 0.3, wave: 0 do
+      with_fx :wobble, phase: 0.5, invert_wave: 0, mix: 0.0, wave: 0 do
         play chord(:g3, :M7)
         sleep 0.5
         play chord(:g3, :M7)
