@@ -6,11 +6,13 @@ drum_play = 1
 drum_hat_clap = 1
 splash_play = 1
 
-synth1_play = 1
-synth2_play = 0
+synth1_play = 0
+synth2_play = 1
 
-bass_play = 1
-hollow_play = 0
+bass1_play = 0
+bass2_play = 1
+
+hollow_play = 1
 pico_play = 0
 
 live_loop :met do
@@ -38,7 +40,6 @@ with_fx :reverb, mix: 0.2 do
       sample :hat_gem, amp: [0, 0, 0.8, 0].tick
       sleep 0.125
       sample :hat_cats # :hat_psych
-      ##| sample :drum_cymbal_open, amp: 0.2, beat_stretch: 1.8, finish: 0.125, hpf: 80
     end
     
     sleep 0.25
@@ -56,22 +57,6 @@ live_loop :clap1, sync: :met do
   sleep 0.5
 end
 
-##| live_loop :snare, sync: :met do
-##|   if drum_hat_clap < 1 then stop end
-##|   with_fx :reverb, room: 0.6 do
-##|     use_sample_defaults  amp: 1, rate: 1, finish: 0.5
-
-##|     sleep 0.5
-##|     sleep 0.375
-##|     sample :drum_snare_soft
-##|     sleep 0.25
-##|     sample :drum_snare_soft
-##|     sleep 0.25
-##|     sample :drum_snare_soft, amp: [0,1].tick
-##|     sleep 2-0.5-0.375-0.25*2
-
-##|   end
-##| end
 
 # splash
 live_loop :splash, sync: :met do
@@ -127,32 +112,45 @@ end
 live_loop :synth2, sync: :met do
   
   if synth2_play < 1 then stop end
-  use_synth :dsaw # :supersaw :dsaw
-  use_synth_defaults release: 0.25, cutoff: 100, amp: 0.8
+  use_synth :dsaw
+  use_synth_defaults release: 0.15, cutoff: 130, amp: 1.2
+  key=:cs4
+  i=-3
   
   with_fx :reverb, mix: 0.7, room: 0.5 do
-    with_fx :echo, phase: 0.25, mix: 0.25, decay: 1.5 do
-      with_fx :wobble, phase: 0.5, invert_wave: 0, mix: 0.0, wave: 0 do
-        play chord(:g3, :M7)
-        sleep 0.5
-        play chord(:g3, :M7)
-        sleep 0.5
-        
-        play chord(:g3+3, :M7)
-        sleep 0.5
-        play chord(:g3+3, :M7)
-        sleep 0.5
-        
-        play chord(:g3+2, :m7)
-        sleep 0.5
-        
-        play chord(:g3+4, :M7)
-        sleep 0.5
-        
-        sleep 1
-      end
-    end
     
+    ##| play chord(key, :m7, invert: i)
+    sleep 0.125
+    play chord(key, :m7, invert: i)
+    sleep 0.25
+    play chord(key, :m7, invert: i)
+    sleep 0.375
+    play chord(key, :m7, invert: i)
+    sleep 0.375
+    
+    play chord(key+7, :m7, invert: i)
+    sleep 0.375
+    
+    play chord(key+7, :m7, invert: i)
+    sleep 0.25
+    
+    play chord(key+7, :m7, invert: i)
+    sleep 0.25
+    
+    play chord(key+3, :m7, invert: i)
+    sleep 0.125
+    sleep 0.25
+    play chord(key+3, :m7, invert: i)
+    sleep 0.375
+    play chord(key+3, :m7, invert: i)
+    sleep 0.375
+    
+    play chord(key+2, :m7, invert: i)
+    sleep 0.375
+    play chord(key+2, :m7, invert: i)
+    sleep 0.25
+    play chord(key+2, :m7, invert: i)
+    sleep 0.25
   end
 end
 
@@ -184,8 +182,8 @@ live_loop :strings_sound, sync: :met do
   use_synth :hollow # :rodeo
   use_synth_defaults  release: 0,  amp: 2, release: 0.25
   
-  with_fx :hpf, cutoff: 95 do
-    play :ds6, sustain: 4
+  with_fx :hpf, cutoff: 100 do
+    play :ds7, sustain: 4
     sleep 4
     
   end
@@ -195,8 +193,8 @@ end
 
 # Bass ----------------------
 
-live_loop :bass_loop, sync: :met do
-  if bass_play < 1 then stop end
+live_loop :bass1, sync: :met do
+  if bass1_play < 1 then stop end
   use_synth :dsaw
   use_synth_defaults release: 0.15, cutoff: 40, amp: 1.6, attack: 0.03
   key=:cs1
@@ -220,6 +218,50 @@ live_loop :bass_loop, sync: :met do
     
     
     play key
+    sleep 0.25
+    
+  end
+end
+
+live_loop :bass2, sync: :met do
+  if bass2_play < 1 then stop end
+  use_synth :dsaw
+  use_synth_defaults release: 0.15, cutoff: 50, amp: 1.6, attack: 0.03
+  key=:cs1
+  
+  with_fx :reverb, mix: 0.7, room: 0.5 do
+    
+    ##| play chord(key, :m7, invert: i)
+    sleep 0.125
+    play key
+    sleep 0.25
+    play key
+    sleep 0.375
+    play key
+    sleep 0.375
+    
+    play key+7
+    sleep 0.375
+    
+    play key+7
+    sleep 0.25
+    
+    play key+7
+    sleep 0.25
+    
+    play key+3
+    sleep 0.125
+    sleep 0.25
+    play key+3
+    sleep 0.375
+    play key+3
+    sleep 0.375
+    
+    play key+2
+    sleep 0.375
+    play key+2
+    sleep 0.25
+    play key+2
     sleep 0.25
     
   end
