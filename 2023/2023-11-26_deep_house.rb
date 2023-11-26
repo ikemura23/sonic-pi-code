@@ -1,18 +1,20 @@
+# background: https://kaiber.ai/share/c60471d7-8513-4c82-ae2e-a3a59e7ab2b5
+
 use_bpm 62
 
 claps = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 drum_play = 1
 drum_hat_clap = 1
-splash_play = 1
+splash_play = 0
 
-synth1_play = 0
-synth2_play = 1
+synth1_play = 1
+synth2_play = 0
 
-bass1_play = 0
-bass2_play = 1
+bass1_play = 1
+bass2_play = 0
 
-hollow_play = 1
+hollow_play = 0
 pico_play = 0
 
 live_loop :met do
