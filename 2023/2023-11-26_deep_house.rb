@@ -1,4 +1,5 @@
 # background: https://kaiber.ai/share/c60471d7-8513-4c82-ae2e-a3a59e7ab2b5
+# Output Twitter: https://twitter.com/ikemura23/status/1728660862326706379
 
 use_bpm 62
 

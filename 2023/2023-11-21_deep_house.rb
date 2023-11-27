@@ -2,6 +2,10 @@
 # Background movie:
 #     https://kaiber.ai/share/96cc185c-8134-42ce-a2ec-3ffc2e5f8a3a
 #     https://kaiber.ai/share/42e6955e-39cc-4c98-a39c-26ec4d325444
+# Output Twitter: 
+#     https://twitter.com/ikemura23/status/1727254861635600440
+#     https://twitter.com/ikemura23/status/1728896662100177082
+
 
 use_bpm 62
 
