@@ -4,20 +4,77 @@ use_bpm 62
 
 claps = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
-live_loop :met do
-  sleep 0.5
+
+
+
+sample :vinyl_backspin, rate: 1
+sleep 1
+
+play_a
+
+
+
+# Aメロ
+define :play_a do
+  in_thread do
+    2.times do
+      synth_a
+    end
+  end
+  
+  in_thread do
+    4.times do
+      4.times do
+        4.times do
+          cymbal_open
+        end
+      end
+    end
+  end
+  
+  in_thread do
+    4.times do
+      4.times do
+        8.times do
+          hat_close
+        end
+      end
+    end
+  end
+  
+  in_thread do
+    4.times do
+      4.times do
+        ##| 2.times do
+        tabla
+        ##| end
+      end
+    end
+  end
+  
+  in_thread do
+    4.times do
+      4.times do
+        2.times do
+          clap
+        end
+      end
+    end
+  end
 end
 
-live_loop :kick, sync: :met do
+
+
+define :kick do
   a = 1
   
-  ##| sample :bd_tek, amp: a, lpf: 110
+  sample :bd_tek, amp: a, lpf: 110
   sleep 0.5
 end
 
 with_fx :reverb, mix: 0.2 do
   
-  live_loop :cymbal_open, sync: :met do
+  define :cymbal_open do
     ##| stop
     ##| if drum_hat_clap < 1 then stop end
     use_sample_defaults lpf: 130, amp: 0.1
@@ -31,8 +88,7 @@ with_fx :reverb, mix: 0.2 do
   end
   
   # clap
-  live_loop :clap1, sync: :met do
-    ##| if drum_hat_clap < 1 then stop end
+  define :clap do
     
     sleep 0.5
     ##| with_fx :reverb, mix: 0.4 do
@@ -42,13 +98,13 @@ with_fx :reverb, mix: 0.2 do
   end
 end
 
-live_loop :hat_close, sync: :met do
+define :hat_close do
   use_sample_defaults lpf: 120, amp: 0.5
   sample :hat_bdu
   sleep 0.25
 end
 
-live_loop :tabla, sync: :met do
+define :tabla do
   use_sample_defaults lpf: 130, amp: 0.5
   sample :tabla_tas1
   sleep 0.25
@@ -64,14 +120,15 @@ live_loop :tabla, sync: :met do
   sample :tabla_na_s
   sleep 0.25
   sleep 0.25
+  sample :tabla_tas1
   sleep 0.25
 end
 
 
-live_loop :synth, sync: :met do
+define :synth_a do
   
-  use_synth_defaults release: 0, sustain: 0.24, amp: 0.8
-  use_synth :saw
+  use_synth_defaults release: 0, sustain: 0.24, amp: 1
+  use_synth :dsaw
   
   tonic = :ab3
   name = :M7
