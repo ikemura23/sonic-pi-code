@@ -73,14 +73,14 @@ end
 
 # splash
 live_loop :splash, sync: :met do
-  ##| if splash_play < 1 then stop end
+  if splash_play < 1 then stop end
   sample :drum_splash_hard, amp: 0.5 if splash_play > 0
   sleep 16
 end
 
 
 live_loop :misc_cineboom, sync: :met do
-  ##| if splash_play < 1 then stop end
+  if splash_play < 1 then stop end
   sleep 14
   with_fx :hpf, cutoff: 100 do
     sample :misc_cineboom, beat_stretch: 10, finish: 0.2, amp: 2 if  splash_play > 0
