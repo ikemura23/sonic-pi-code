@@ -2,6 +2,26 @@ live_loop :met do
   sleep 1
 end
 
+
+# drum ########################
+
+live_loop :amen, sync: :met  do
+  sample :loop_amen_full, beat_stretch: 8
+  sleep 8
+  
+  sample :loop_amen_full, beat_stretch: 8, start: 0, finish: 0.75
+  sleep 6
+  sleep 2
+end
+
+live_loop :drum_splash, sync: :met do
+  sample :drum_splash_soft
+  sleep 16
+end
+
+
+# synth ################################################
+
 live_loop :s, sync: :met do
   ##| stop
   use_synth :tech_saws
@@ -31,6 +51,7 @@ live_loop :s2, sync: :met do
     sleep 1
     control s, note: key+5
   end
+  
   ##| key = key+7
   ##| play key, release: 0, note_slide: 0.1, sustain: 4 do |s|
   ##|   sleep 1
@@ -40,6 +61,17 @@ live_loop :s2, sync: :met do
   ##|   sleep 1
   ##|   control s, note: key+5
   ##| end
+  
+  ##| key = key+12
+  ##| play key, release: 0, note_slide: 0.1, sustain: 4 do |s|
+  ##|   sleep 1
+  ##|   control s, note: key+7
+  ##|   sleep 1
+  ##|   control s, note: key+10
+  ##|   sleep 1
+  ##|   control s, note: key+5
+  ##| end
+  
   sleep 4
 end
 
@@ -68,14 +100,12 @@ live_loop :s3, sync: :met do
     sleep 6
     
     sleep 1
-    play key-5, note_slide: 1, sustain: 1, release: 0 do |s|
+    play key-5, note_slide: 1, sustain: 3, release: 0 do |s|
       control s, note: key
     end
-    sleep 1
+    sleep 3
     
-    play key, note_slide: 0.2, sustain: 6, release: 2 do |s|
-      sleep 2
-      control s, note: key
+    play key, note_slide: 0.2, sustain: 5, release: 2 do |s|
       sleep 1
       control s, note: key+10
       sleep 0.5
@@ -89,16 +119,4 @@ live_loop :s3, sync: :met do
   end
 end
 
-live_loop :amen, sync: :met  do
-  sample :loop_amen_full, beat_stretch: 8
-  sleep 8
-  
-  sample :loop_amen_full, beat_stretch: 8, start: 0, finish: 0.75
-  sleep 6
-  sleep 2
-end
 
-live_loop :drum_splash, sync: :met do
-  sample :drum_splash_soft
-  sleep 16
-end
