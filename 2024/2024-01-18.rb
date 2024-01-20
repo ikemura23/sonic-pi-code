@@ -1,3 +1,5 @@
+# output: https://twitter.com/ikemura23/status/1747964987094733104
+
 use_bpm 50
 
 
