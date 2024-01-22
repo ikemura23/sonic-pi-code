@@ -1,3 +1,5 @@
+# output https://twitter.com/ikemura23/status/1748822961614934090
+
 live_loop :met do
   sleep 1
 end
