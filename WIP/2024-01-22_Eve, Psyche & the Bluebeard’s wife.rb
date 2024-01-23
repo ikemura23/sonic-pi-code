@@ -59,19 +59,21 @@ end
 
 live_loop :vocal_melody, sync: :met do
   
-  use_synth :dsaw
+  use_synth :dpulse
   use_synth_defaults release: 0.1, sustain: 0.25, amp: 0.7
   
   key = :g3
   
-  with_fx :reverb, mix: 0.5, room: 0.5, mix: 0.8 do
-    7.times do
-      
-      play key
+  with_fx :reverb, mix: 0.8, room: 0.5 do
+    with_fx :lpf, cutoff: 110 do
+      7.times do
+        
+        play key
+        sleep 0.5
+      end
+      play key+1
       sleep 0.5
     end
-    play key+1
-    sleep 0.5
   end
   
 end
