@@ -5,6 +5,7 @@ end
 # drum #############################
 
 live_loop :kick, sync: :met do
+  stop
   use_sample_defaults amp: 1.3, lpf: 100
   
   7.times do
@@ -18,6 +19,7 @@ live_loop :kick, sync: :met do
 end
 
 live_loop :hat, sync: :met do
+  stop
   use_sample_defaults hpf: 100, amp: 0.2, rate: 1.3
   
   with_fx :reverb, mix: 0.2 do
