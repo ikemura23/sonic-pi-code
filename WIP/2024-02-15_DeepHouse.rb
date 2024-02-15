@@ -1,5 +1,11 @@
 use_bpm 60
 
+drum_play = 1
+percussion_play = 0
+voice_play = 0
+synth_play = 1
+bass_play = 0
+
 live_loop :met do
   sleep 0.5
 end
@@ -8,6 +14,7 @@ end
 
 live_loop :kick, sync: :met do
   ##| stop
+  if drum_play < 1 then stop end
   use_sample_defaults amp: 1.4, lpf: 90
   
   7.times do
@@ -22,6 +29,7 @@ end
 
 live_loop :hat, sync: :met do
   ##| stop
+  if drum_play < 1 then stop end
   use_sample_defaults hpf: 100, amp: 0.4, rate: 1.3
   
   with_fx :reverb, mix: 0.2 do
@@ -32,7 +40,7 @@ end
 
 live_loop :cymbal_open, sync: :met do
   ##| stop
-  
+  if drum_play < 1 then stop end
   use_sample_defaults amp: 0.5
   sleep 0.25
   sample :hat_cats, rate: 1, lpf: 130
@@ -42,7 +50,8 @@ end
 
 
 live_loop :snare_loop, sync: :met do
-  stop
+  ##| stop
+  if drum_play < 1 then stop end
   
   co = 100
   at = 0.00
@@ -61,8 +70,8 @@ live_loop :snare_loop, sync: :met do
 end
 
 live_loop :clap, sync: :met do
-  ##| stop
-  
+  stop
+  if drum_play < 1 then stop end
   use_synth :sc808_clap
   use_synth_defaults amp: 2
   
@@ -92,6 +101,7 @@ end
 
 live_loop :tabla, sync: :met do
   ##| stop
+  if percussion_play < 1 then stop end
   use_sample_defaults hpf: 70, amp: 0.8, rate: 1.3
   
   sleep 0.125*3
@@ -107,6 +117,7 @@ end
 
 live_loop :loop_tabla, sync: :met do
   ##| stop
+  if percussion_play < 1 then stop end
   sample :loop_safari,  beat_stretch: 8, amp: 2
   sleep 8
 end
@@ -115,7 +126,9 @@ end
 ### Voice
 
 live_loop :sample_voice, sync: :met do
-  stop
+  ##| stop
+  
+  if voice_play < 1 then stop end
   use_sample_defaults amp: 0.6#, rate: -1
   
   with_fx :reverb do
@@ -133,7 +146,8 @@ end
 # Synth ############################
 
 live_loop :synth1, sync: :met do
-  stop
+  if synth_play < 1 then stop end
+  ##| stop
   
   use_synth_defaults amp: 0.8, release: 4, sustain: 0
   use_synth :dsaw
@@ -153,7 +167,9 @@ live_loop :synth1, sync: :met do
 end
 
 live_loop :synth2, sync: :met do
-  stop
+  ##| stop
+  if synth_play < 1 then stop end
+  
   use_synth :hollow
   use_synth_defaults amp: 3, release: 0, sustain: 4
   
@@ -171,6 +187,8 @@ end
 
 live_loop :bass, sync: :met do
   ##| stop
+  if bass_play < 1 then stop end
+  
   use_synth_defaults amp: 1.3, release: 0.2, sustain: 0.1
   use_synth :dpulse
   
