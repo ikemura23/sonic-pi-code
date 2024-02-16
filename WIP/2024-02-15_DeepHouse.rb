@@ -1,10 +1,10 @@
 use_bpm 60
 
 drum_play = 1
-percussion_play = 0
+percussion_play = 1
 voice_play = 0
-synth_play = 1
-bass_play = 0
+synth_play = 0
+bass_play = 1
 
 live_loop :met do
   sleep 0.5
