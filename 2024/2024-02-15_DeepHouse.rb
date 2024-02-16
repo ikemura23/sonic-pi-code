@@ -2,6 +2,7 @@
 # Twitter: https://twitter.com/ikemura23/status/1758287937794609234
 # YouTube: https://youtu.be/EiCVDw5fztw
 # Bluesky: https://bsky.app/profile/ikemura23.bsky.social/post/3klinszfmca2j
+# Kaiber.ai: https://kaiber.ai/share/318564a1-bcf2-4fc2-b46f-2500f2bdeb7b
 
 use_bpm 60
 
