@@ -1,3 +1,8 @@
+# Inspier: https://music.youtube.com/watch?v=gi9GGcYEby0&si=pvatN1Xz9wIUJ4eO
+# Twitter: https://twitter.com/ikemura23/status/1758287937794609234
+# YouTube: https://youtu.be/EiCVDw5fztw
+# Bluesky: https://bsky.app/profile/ikemura23.bsky.social/post/3klinszfmca2j
+
 use_bpm 60
 
 drum_play = 1
