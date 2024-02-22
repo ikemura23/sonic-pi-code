@@ -1,3 +1,5 @@
+# Background Movie: https://kaiber.ai/share/433ae9bb-1470-4bd2-bf03-a31506338fbb
+# Twitter: https://twitter.com/ikemura23/status/1760455071639450000
 # Voice https://www.youtube.com/watch?v=GwdUa6fV62s
 
 use_bpm 60
