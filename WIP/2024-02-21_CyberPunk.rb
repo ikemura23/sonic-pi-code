@@ -158,8 +158,9 @@ live_loop :base, sync: :met do
     else
       8.times do
         play key-2
-        sleep 0.125*8
+        sleep 0.125
       end
+      sleep 0.125*8
     end
   end
 end
