@@ -1,4 +1,6 @@
 # 2024-02-21 CyberPunk song
+# X(Twitter): https://twitter.com/ikemura23/status/1766005357095313503
+# Background movie: https://kaiber.ai/share/c60471d7-8513-4c82-ae2e-a3a59e7ab2b5
 
 use_bpm 40
 
