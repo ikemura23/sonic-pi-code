@@ -1,7 +1,7 @@
 # Deep House
 # Inspire : Monolithic - 3am (resonance) https://music.youtube.com/watch?v=oquTMigqJAE&si=ymG7AWfh5yPOR_O4
 # Back movie: https://www.youtube.com/watch?v=B6Dhz9GUTwY
-
+# Output : https://twitter.com/ikemura23/status/1780523091900440658
 
 clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
