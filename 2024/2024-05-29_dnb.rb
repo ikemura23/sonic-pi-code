@@ -1,4 +1,6 @@
 # 2024-05-29 Atmosphere dnb
+# Background Movie: https://kaiber.ai/share/be78930e-5aca-4283-b207-5094a5a5d7eb
+# Output: https://twitter.com/ikemura23/status/1795832995468980349
 
 drum_loops = "/Users/k_ikemura/Music/sonic_pi/96 JUNGLE - VOL.2/E1_96JV2_Drum_Breaks"
 percussion_loops = "/Users/k_ikemura/Music/sonic_pi/96 JUNGLE - VOL.2/E1_96JV2_Percussion_Loops"
