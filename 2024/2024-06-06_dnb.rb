@@ -1,4 +1,7 @@
-## Inspire https://music.youtube.com/watch?v=At6454ey7Pc&si=vD3r9TAB__CVtHpP
+# Inspire https://music.youtube.com/watch?v=At6454ey7Pc&si=vD3r9TAB__CVtHpP
+# Twitter https://x.com/ikemura23/status/1799263810517438830
+# Background movie https://www.youtube.com/watch?v=DGIXT7ce3vQ
+
 drum_loops = "/Users/k_ikemura/Music/sonic_pi/96 JUNGLE - VOL.2/E1_96JV2_Drum_Breaks"
 percussion_loops = "/Users/k_ikemura/Music/sonic_pi/96 JUNGLE - VOL.2/E1_96JV2_Percussion_Loops"
 
