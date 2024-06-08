@@ -26,16 +26,16 @@ end
 
 live_loop :drum_loops, sync: :met do
   ##| stop
-  #12 16
-  loops = 16 # [24]
-  sample drum_loops, [16, 17].tick, beat_stretch: 16
+  
+  loops = [16, 17] # 16, 17
+  sample drum_loops, loops.tick, beat_stretch: 16, amp: 1.2
   sleep 16
 end
 
 live_loop :percussion_loops, sync: :met do
   ##| stop
   # 11 12
-  sample percussion_loops, 11, beat_stretch: 8, amp: 0.4
+  sample percussion_loops, 12, beat_stretch: 8, amp: 0.4
   sleep 8
 end
 
@@ -94,7 +94,6 @@ live_loop :synth3, sync: :met do
   
   sleep 8
   
-  ##| with_fx :hpf, cutoff: 70 do
   cd = chord(:a4, :M7, invert: -1)
   with_fx :echo, phase: 1, decay: 10 do
     cd.size.times do
