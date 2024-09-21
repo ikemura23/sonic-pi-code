@@ -26,12 +26,13 @@ live_loop :hat, sync: :met do
 end
 
 live_loop :first_synth, sync: :met do
+  stop
   use_synth :pulse
   use_synth_defaults release: 0.1, amp: 0.5
   
   with_fx :reverb, mix: 0.7, room: 0.7 do
     
-    key = :bb4
+    key = :bb5
     play key
     sleep 0.25
     play key-2
@@ -60,7 +61,7 @@ end
 live_loop :chord_synth, sync: :met do
   ##| stop
   
-  use_synth :tri #:tri :sine :organ_tonewheel
+  use_synth :sine #:tri :sine :organ_tonewheel
   
   use_synth_defaults release: 2
   
@@ -102,14 +103,11 @@ live_loop :chord_synth, sync: :met do
   end
 end
 
-
 define :play_times do |chord|
   in_thread do
-    play_pattern_timed chord, 0.02, amp: 0.5
+    play_pattern_timed chord, 0.03, amp: 0.7
   end
 end
-
-
 
 live_loop :bass, sync: :met do
   ##| stop
