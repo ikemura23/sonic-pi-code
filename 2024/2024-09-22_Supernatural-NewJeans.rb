@@ -1,4 +1,9 @@
-## Supernatural Lofi remix - NewJeans: https://youtu.be/ZncbtRo7RXs?si=AzgD5LaEnEkjQBEd
+# Supernatural Lofi remix - NewJeans: https://youtu.be/ZncbtRo7RXs?si=AzgD5LaEnEkjQBEd
+
+# Output
+#   X(Twitter) : https://twitter.com/ikemura23/status/1837523894691049688
+#   Instagram : https://www.instagram.com/reel/DAL3sYKS_Fb
+#   YouTube : https://youtu.be/Ijh_YhzESwc
 
 use_bpm 40
 
