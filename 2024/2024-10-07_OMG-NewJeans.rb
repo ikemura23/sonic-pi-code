@@ -265,7 +265,7 @@ live_loop :bass, sync: :met do
     sleep 0.5
     play :d2, release: 0.5
     sleep 0.5
-    play :db1, release: 0.5
+    play :a1, release: 0.5
     sleep 0.5
     play :b2
     sleep 0.25
