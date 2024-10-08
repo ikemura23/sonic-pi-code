@@ -20,7 +20,6 @@ perc_cowbel_play  = 0
 bass_verse_play = 0
 
 
-
 live_loop :met do
   sleep 0.5
 end
@@ -220,53 +219,57 @@ end
 live_loop :bass, sync: :met do
   if bass_verse_play < 1 then stop end
   
-  use_synth_defaults  release: 0.25, attack: 0, amp: 1
-  use_synth :fm
+  use_synth_defaults release: 0.25, amp: 1
+  use_synth :dpulse
   
-  # 1
-  play :g2
-  sleep 0.375
-  play :g2
-  sleep 0.375
-  sleep 0.5
-  play :g3
-  sleep 0.25
-  play :c3
-  sleep 0.25
-  sleep 0.25
-  
-  # 2
-  sleep 0.25
-  play :c3, release: 0.5
-  sleep 0.5
-  play :c3, release: 0.5
-  sleep 0.5
-  play :db3, release: 0.5
-  sleep 0.5
-  play :db3
-  sleep 0.25
-  
-  # 3
-  play :d3
-  sleep 0.375
-  play :d3
-  sleep 0.375
-  sleep 0.5
-  play :d4
-  sleep 0.25
-  play :d3
-  sleep 0.25
-  sleep 0.25
-  
-  # 4
-  sleep 0.25
-  play :d3, release: 0.5
-  sleep 0.5
-  play :d3, release: 0.5
-  sleep 0.5
-  play :db2, release: 0.5
-  sleep 0.5
-  play :b3
-  sleep 0.25
+  with_fx :lpf, cutoff: 100 do
+    
+    # 1
+    play :g1
+    sleep 0.375
+    play :g1
+    sleep 0.375
+    sleep 0.5
+    play :g2
+    sleep 0.25
+    play :c2
+    sleep 0.25
+    sleep 0.25
+    
+    # 2
+    sleep 0.25
+    play :c2, release: 0.5
+    sleep 0.5
+    play :c2, release: 0.5
+    sleep 0.5
+    play :db2, release: 0.5
+    sleep 0.5
+    play :db2
+    sleep 0.25
+    
+    # 3
+    play :d2
+    sleep 0.375
+    play :d2
+    sleep 0.375
+    sleep 0.5
+    play :d3
+    sleep 0.25
+    play :d2
+    sleep 0.25
+    sleep 0.25
+    
+    # 4
+    sleep 0.25
+    play :d2, release: 0.5
+    sleep 0.5
+    play :d2, release: 0.5
+    sleep 0.5
+    play :db1, release: 0.5
+    sleep 0.5
+    play :b2
+    sleep 0.25
+  end
 end
+
 
