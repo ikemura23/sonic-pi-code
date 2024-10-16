@@ -1,9 +1,14 @@
 # NewJeans - OMG
 
+# Inspired by:
+#   Chord: https://www.youtube.com/watch?v=RQrZznPTRaI
+#   Drum: https://www.youtube.com/watch?v=1_kcaxyw7rU
+#   Bass https://www.youtube.com/watch?v=rJhFpzbgXlE
 
-# Chord: https://www.youtube.com/watch?v=RQrZznPTRaI
-# Drum: https://www.youtube.com/watch?v=1_kcaxyw7rU
-# Bass https://www.youtube.com/watch?v=rJhFpzbgXlE
+# Outputs:
+#    Youtube: https://youtu.be/hmU534QNHgg
+#    X(Twitter): https://twitter.com/ikemura23/status/1846440239667298775
+#    Bluesky: https://bsky.app/profile/ikemura23.bsky.social/post/3l6mdc7fp5f2z
 
 use_bpm 60
 
