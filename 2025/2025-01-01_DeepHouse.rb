@@ -61,14 +61,13 @@ live_loop :clap, sync: :met do
 end
 
 
-
 # Synth ########################
 
 live_loop :synth_1, sync: :met do
   ##| stop
   
   use_synth :saw
-  use_synth_defaults release: 0.25, attack: 0, amp: 0.6
+  use_synth_defaults release: 0.25, attack: 0, amp: 0.8
   
   with_fx :reverb, mix: 0.6 do
     with_fx :distortion, mix: 0.5 do
@@ -82,7 +81,7 @@ live_loop :synth_1, sync: :met do
           play chord(:g2, :M7)
           sleep 0.375
           sleep 0.125
-          ##| play chord(:g2, :M7)
+          ##| play chord(:g4, :M7)
           sleep 0.5
           play chord(:g2, :M7)
           sleep 0.25
@@ -95,7 +94,7 @@ live_loop :synth_1, sync: :met do
           sleep 0.375
           
           sleep 0.125
-          ##| play chord(:c3, :M7)
+          ##| play chord(:c5, :M7)
           sleep 0.5
           play chord(:g2, :M7)
           sleep 0.25
