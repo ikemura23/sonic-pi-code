@@ -1,3 +1,6 @@
+# 2025-01-03 Deep House Jam - Sonic Pi
+# Background movie: https://www.youtube.com/watch?v=Eei0LPZOdJs
+
 use_bpm 62
 
 cymbal_open_flag = 1
