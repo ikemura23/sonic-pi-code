@@ -1,6 +1,11 @@
 # 2025-01-03 Deep House Jam - Sonic Pi
 # Background movie: https://www.youtube.com/watch?v=Eei0LPZOdJs
 
+# URLs Posted on SNS:
+#   https://x.com/ikemura23/status/1874968712648024458
+#   https://www.instagram.com/p/DEV7JpOzXfx
+#   https://bsky.app/profile/ikemura23.bsky.social/post/3lesccbx3cc2b
+
 use_bpm 62
 
 cymbal_open_flag = 1
