@@ -1,5 +1,11 @@
 # UMD - Trashiii & Zorrovian
-# https://www.youtube.com/watch?v=qF5zqR072IE
+
+# Background movie: https://www.youtube.com/watch?v=qF5zqR072IE
+
+# URLs Posted on SNS:
+#  https://x.com/ikemura23/status/1875446141376196697
+#  https://www.instagram.com/p/DEZUSWpT07N/
+#  https://bsky.app/profile/ikemura23.bsky.social/post/3levm4dtrwc2z
 
 use_bpm 80
 
