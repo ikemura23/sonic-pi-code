@@ -1,6 +1,12 @@
 # UMD - Trashiii & Zorrovian v2
 # https://www.youtube.com/watch?v=qF5zqR072IE
 
+
+# URLs Posted on SNS:
+#  https://x.com/ikemura23/status/1875948725568471117
+#  https://www.instagram.com/p/DEc43gATeIc
+#  https://bsky.app/profile/ikemura23.bsky.social/post/3lez3ogl6ks2v
+
 use_bpm 82
 
 drum_loops = "/Users/k_ikemura/Music/sonic_pi/Nuttah\ Jungle/EO_NutJngl_WAV_LOOPS/EO_NutJngl_Drum_Break_Loops"
