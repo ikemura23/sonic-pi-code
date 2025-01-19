@@ -3,28 +3,7 @@
 use_bpm 90
 
 # drum -------------------------------------------------
-in_thread do
-  
-  ##| part 1
-  ##| 6.times do
-  ##|   drum
-  ##| end
-  ##| drum_fill_1
-  ##| drum_fill_2
-  
-  # part 2
-  15.times do
-    drum
-  end
-  drum_fill_2
-  
-  # part 3
-  7.times do
-    drum
-  end
-  drum_fill_2
-  
-end
+
 
 define :drum do
   use_sample_defaults amp: 1
@@ -65,7 +44,32 @@ define :drum_fill_2 do
   
 end
 
-
+in_thread do
+  
+  ##| part 1
+  ##| 6.times do
+  ##|   drum
+  ##| end
+  ##| drum_fill_1
+  ##| drum_fill_2
+  
+  # part 2
+  ##| 15.times do
+  ##|   drum
+  ##| end
+  ##| drum_fill_2
+  
+  # part 3
+  15.times do
+    drum
+  end
+  drum_fill_2
+  15.times do
+    drum
+  end
+  drum_fill_2
+  
+end
 
 # Bass -------------------------------------------------
 
@@ -77,21 +81,21 @@ in_thread do
   ##| end
   
   # part 2
-  8.times do
-    bass :cs2
-  end
-  8.times do
-    bass :e2
-  end
-  8.times do
-    bass :cs2
-  end
-  4.times do
-    bass :d2
-  end
-  4.times do
-    bass :e2
-  end
+  ##| 8.times do
+  ##|   bass :cs2
+  ##| end
+  ##| 8.times do
+  ##|   bass :e2
+  ##| end
+  ##| 8.times do
+  ##|   bass :cs2
+  ##| end
+  ##| 4.times do
+  ##|   bass :d2
+  ##| end
+  ##| 4.times do
+  ##|   bass :e2
+  ##| end
   
   # part 3
   2.times do
@@ -125,8 +129,6 @@ in_thread do
   
 end
 
-
-
 define :bass do | note |
   use_synth_defaults release: 0.25, attack_level: 0, amp: 1
   ##| use_synth :dsaw
@@ -140,13 +142,10 @@ define :bass do | note |
   end
 end
 
-# Synth -------------------------------------------------
+# Synth chord -------------------------------------------------
 
-in_thread do
-  synth1
-end
 
-define :synth1 do
+define :synth_chord_part_1 do
   use_synth_defaults release: 4, amp: 0.5
   use_synth :dsaw
   
@@ -164,5 +163,79 @@ define :synth1 do
   
   play chord(:fs4, :m)
   sleep 4-0.75
+end
+
+
+define :synth_chord_part_2 do
+  use_synth_defaults sustain: 8, amp: 4
+  use_synth :hollow
+  
+  play chord(:a4, :M)
+  sleep 8
+  
+  play chord(:a4, :M)
+  sleep 8
+  
+  play chord(:e4, :M)
+  sleep 8
+  
+  play chord(:b, :M)
+  sleep 8
+  
+end
+
+in_thread do
+  ##| synth_chord_part_1
+  synth_chord_part_2
+  synth_chord_part_2
+end
+
+
+# Synth melody -------------------------------------------------
+
+define :synth_mero_part_2 do
+  use_synth_defaults release: 4, amp: 1
+  use_synth :dsaw
+  
+  play :cs4
+  sleep 7
+  play :e4
+  sleep 1
+  play :cs4
+  sleep 7
+  play :fs4
+  sleep 1
+  play :gs4
+  sleep 7
+  play :e4
+  sleep 1
+  play :ds4
+  sleep 7
+  play :b3
+  sleep 1
+  
+  play :cs4
+  sleep 7
+  play :e4
+  sleep 1
+  play :cs4
+  sleep 7
+  play :fs4
+  sleep 1
+  play :gs4
+  sleep 7
+  play :b4
+  sleep 1
+  play :fs4
+  sleep 7
+  play :e4
+  sleep 0.5
+  play :ds4
+  sleep 0.5
+end
+
+in_thread do
+  ##| sleep 16
+  synth_mero_part_2
   
 end
