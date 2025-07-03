@@ -1,3 +1,9 @@
+# Title: 
+
+# Shared on SNS
+#   X (Twitter): https://x.com/ikemura23/status/1940649931481796849
+#   Youtube: TBD
+
 use_bpm 60
 
 live_loop :met do
