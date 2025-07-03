@@ -1,4 +1,4 @@
-# 2025-07-03 House
+# Original : Clat Inlie https://soundcloud.com/inlie/clat
 
 claps = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/one\ shots/LCC_Claps"
 hats = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/drum_loops/LCC_hat\ loops"
@@ -28,8 +28,10 @@ end
 
 live_loop :hats_sample, sync: :met do
   ##| stop
+  use_sample_defaults amp: 1.5
+  
   with_fx :reverb do
-    sample hats, 2, beat_stretch: 8, amp: 1.2
+    sample hats, 2, beat_stretch: 8
     sleep 8
   end
 end
@@ -38,6 +40,7 @@ end
 
 live_loop :clap, sync: :met do
   ##| stop
+  use_sample_defaults amp: 1.5
   sleep 0.5
   with_fx :reverb, mix: 0.1 do
     sample claps, 0
