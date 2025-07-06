@@ -1,5 +1,10 @@
 # Original : Clat Inlie https://soundcloud.com/inlie/clat
 
+# Shared on SNS
+#   X (Twitter): https://x.com/ikemura23/status/1940932833121640862
+#   Youtube: https://youtube.com/shorts/a9-jiFecENI
+
+
 claps = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/one\ shots/LCC_Claps"
 hats = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/drum_loops/LCC_hat\ loops"
 

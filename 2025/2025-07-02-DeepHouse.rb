@@ -2,7 +2,7 @@
 
 # Shared on SNS
 #   X (Twitter): https://x.com/ikemura23/status/1940649931481796849
-#   Youtube: TBD
+#   Youtube: https://youtube.com/shorts/K-nJ7OXxP9c
 
 claps = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/one\ shots/LCC_Claps"
 hats = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/drum_loops/LCC_hat\ loops"
