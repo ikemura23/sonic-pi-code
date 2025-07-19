@@ -1,5 +1,9 @@
 # Original : The Twilight Track https://music.youtube.com/watch?v=VZtWp9PxzO8&si=XHrvQKsH3b9nqB51
 
+# Shared on SNS
+#   X (Twitter): https://x.com/ikemura23/status/1946379657097671147
+#   Youtube: https://youtube.com/shorts/91iNrYRrNPE?feature=share
+
 claps = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/one\ shots/LCC_Claps"
 hats = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/drum_loops/LCC_hat\ loops"
 
