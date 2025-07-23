@@ -57,10 +57,10 @@ end
 
 live_loop :clap, sync: :met do
   ##| stop
-  use_sample_defaults amp: 1.5
+  use_sample_defaults amp: 1.1
   sleep 0.5
   with_fx :reverb, mix: 0.1 do
-    sample claps, 0
+    sample claps, 1
   end
   
   sleep 0.5
@@ -106,8 +106,8 @@ end
 live_loop :synth_2, sync: :met do
   stop
   
-  use_synth :dtri
-  use_synth_defaults release: 0.25, amp: 0.8
+  use_synth :tech_saws # :dtri or :tech_saws
+  use_synth_defaults release: 0.25, amp: 1.2
   
   f = chord(:f5, :M7, invert: 0)
   ##| d = chord(:d4, :M7, invert: 0)
