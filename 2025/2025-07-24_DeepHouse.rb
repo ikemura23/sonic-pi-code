@@ -20,7 +20,7 @@ live_loop :kick, sync: :met do
     sleep 0.5
   end
   
-  ##| sleep 2
+  sleep 2
 end
 
 # Hat ########################
@@ -30,8 +30,8 @@ live_loop :hats_sample_1, sync: :met do
   use_sample_defaults amp: 1.1
   
   with_fx :reverb do
-    sample hats, 0, beat_stretch: 8
-    sleep 8
+    sample hats, 1, beat_stretch: 8, finish: 0.25
+    sleep 2
   end
 end
 
@@ -65,15 +65,6 @@ live_loop :clap, sync: :met do
   
   sleep 0.5
 end
-
-# safari
-live_loop :safari, sync: :met do
-  stop
-  use_sample_defaults amp: 2
-  sample :loop_safari, beat_stretch: 8
-  sleep 8
-end
-
 
 
 # Synth ########################
