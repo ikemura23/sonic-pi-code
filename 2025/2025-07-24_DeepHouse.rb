@@ -13,7 +13,7 @@ end
 
 live_loop :kick, sync: :met do
   
-  ##| stop
+  stop
   
   28.times do
     sample :bd_tek, amp: 2
@@ -98,7 +98,7 @@ live_loop :synth_2, sync: :met do
   stop
   
   use_synth :tech_saws # :dtri or :tech_saws
-  use_synth_defaults release: 0.25, amp: 1.2
+  use_synth_defaults release: 0.25, amp: 1.5
   
   f = chord(:f5, :M7, invert: 0)
   ##| d = chord(:d4, :M7, invert: 0)
