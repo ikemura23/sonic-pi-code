@@ -1,5 +1,9 @@
 # Original : https://music.youtube.com/watch?v=TR3BtpPhMl0&si=m21QiMu_vGx9JZgF It's All About That Feeling HATT.D • GLBDOM Therapy 2
 
+# Shared on SNS
+#   X (Twitter): https://x.com/ikemura23/status/1949022127610581497
+#   Youtube: https://www.youtube.com/shorts/tFA2GuBaz-k
+
 claps = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/one\ shots/LCC_Claps"
 hats = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/drum_loops/LCC_hat\ loops"
 
