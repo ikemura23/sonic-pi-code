@@ -1,8 +1,9 @@
 # Inspired by 
 #   https://youtu.be/c8zaWGKQK34?si=AB51xcppxnCDtiai
 #   https://youtu.be/Urok9ZCj0Cs?si=qY3haWgA4ypgX6zS
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+clap = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 duration = 8
 

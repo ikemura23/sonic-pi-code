@@ -1,7 +1,9 @@
 # output https://twitter.com/ikemura23/status/1453302072653369352
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
+
 use_bpm 75
-drum = "/Users/k_ikemura/Music/sonic_pi/LCA_drum loops"
-drum2 = "/Users/k_ikemura/Music/sonic_pi"
+drum = "#{sample_root}/LCA_drum loops"
+drum2 = "#{sample_root}"
 
 # Welcome to Sonic Pi
 

@@ -1,5 +1,6 @@
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
-drum = "/Users/k_ikemura/Music/sonic_pi"
+drum = "#{sample_root}"
 
 live_loop :kick do
   sleep 0.5

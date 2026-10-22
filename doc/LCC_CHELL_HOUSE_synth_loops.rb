@@ -1,4 +1,6 @@
-synth_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/synth_loops"# Welcome to Sonic Pi
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
+
+synth_loop = "#{sample_root}/LCC_CHELL_HOUSE/synth_loops"# Welcome to Sonic Pi
 
 num = 16
 

@@ -1,6 +1,8 @@
 #output https://twitter.com/ikemura23/status/1484701538660814849
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
+
 use_bpm 70
-drum = "/Users/k_ikemura/Music/sonic_pi/LCHZ_UK_DRILL/LCHZ_drum\ loops/LCHZ_drum\ loops\ full"
+drum = "#{sample_root}/LCHZ_UK_DRILL/LCHZ_drum\ loops/LCHZ_drum\ loops\ full"
 
 live_loop :bd do
   sleep 0.5

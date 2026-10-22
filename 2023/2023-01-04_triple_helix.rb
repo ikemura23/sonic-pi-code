@@ -1,13 +1,14 @@
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 use_debug false
 use_bpm 76
 
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
-hat = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
-synth_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/synth_loops"
-top_loop = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_top\ loops"
-kick_sample = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_one\ shots/LCA_kicks"
-drum_full_loop = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_drum\ loops\ full"
+clap = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+hat = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
+synth_loop = "#{sample_root}/LCC_CHELL_HOUSE/synth_loops"
+top_loop = "#{sample_root}/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_top\ loops"
+kick_sample = "#{sample_root}/LCA_LIQUID_DNB/LCA_one\ shots/LCA_kicks"
+drum_full_loop = "#{sample_root}/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_drum\ loops\ full"
 
 kick_flag = 0
 hat_flag = 0

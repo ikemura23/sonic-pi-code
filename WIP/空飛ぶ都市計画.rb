@@ -1,8 +1,9 @@
 # https://www.youtube.com/watch?v=ZezfpWmfacc
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 use_bpm 62
 
-claps = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+claps = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 
 

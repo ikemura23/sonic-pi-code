@@ -1,12 +1,13 @@
 # ゆめ未来 Sonic
 # 動画
 # https://www.youtube.com/watch?v=ow0CzpiV6zM
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 ## part 1
 
 
 use_bpm 70
-drum = "/Users/k_ikemura/Music/sonic_pi/drum_slow"
+drum = "#{sample_root}/drum_slow"
 
 cd = :a3
 
@@ -45,7 +46,7 @@ end
 
 ## part 2
 
-# drum = "/Users/k_ikemura/Music/sonic_pi/drum_slow"
+# drum = "#{sample_root}/drum_slow"
 
 # cd = :a3
 

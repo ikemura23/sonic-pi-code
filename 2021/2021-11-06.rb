@@ -1,5 +1,7 @@
-drum = "/Users/k_ikemura/Music/sonic_pi/LCA_drum loops"
-synth_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/synth_loops"
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
+
+drum = "#{sample_root}/LCA_drum loops"
+synth_loop = "#{sample_root}/LCC_CHELL_HOUSE/synth_loops"
 use_bpm 80
 
 live_loop :kick do

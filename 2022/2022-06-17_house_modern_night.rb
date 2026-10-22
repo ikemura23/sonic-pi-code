@@ -1,6 +1,8 @@
 # output https://twitter.com/ikemura23/status/1537725235151130625
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
-percussion = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_percussion\ loops"
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
+
+clap = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+percussion = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_percussion\ loops"
 
 use_debug false
 ##| use_bpm 63

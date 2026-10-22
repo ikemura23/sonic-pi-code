@@ -1,6 +1,7 @@
 # https://youtu.be/J5qhfr-Eoe4?si=P_8ouMSimjeNSLEI&t=2332
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
-claps = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/one\ shots/LCC_Claps"
+claps = "#{sample_root}/LCC_CHELL_HOUSE/one\ shots/LCC_Claps"
 
 live_loop :met do
   sleep 0.5

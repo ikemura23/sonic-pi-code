@@ -5,11 +5,12 @@
 # Output Twitter: 
 #     https://twitter.com/ikemura23/status/1727254861635600440
 #     https://twitter.com/ikemura23/status/1728896662100177082
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 
 use_bpm 62
 
-claps = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+claps = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 drum_play = 1
 drum_hat_clap = 1

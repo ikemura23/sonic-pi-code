@@ -1,10 +1,11 @@
 # Deep House
 # Background movie: https://www.youtube.com/watch?v=Sx8D7_bBB14
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 # Output
 #  twitter: https://twitter.com/ikemura23/status/1780958001798787101
 
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+clap = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 live_loop :met do
   sleep 0.5

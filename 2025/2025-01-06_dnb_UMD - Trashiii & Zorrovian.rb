@@ -1,5 +1,6 @@
 # UMD - Trashiii & Zorrovian v2
 # https://www.youtube.com/watch?v=qF5zqR072IE
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 
 # URLs Posted on SNS:
@@ -9,8 +10,8 @@
 
 use_bpm 82
 
-drum_loops = "/Users/k_ikemura/Music/sonic_pi/Nuttah\ Jungle/EO_NutJngl_WAV_LOOPS/EO_NutJngl_Drum_Break_Loops"
-percussion_loops = "/Users/k_ikemura/Music/sonic_pi/96 JUNGLE - VOL.2/E1_96JV2_Percussion_Loops"
+drum_loops = "#{sample_root}/Nuttah\ Jungle/EO_NutJngl_WAV_LOOPS/EO_NutJngl_Drum_Break_Loops"
+percussion_loops = "#{sample_root}/96 JUNGLE - VOL.2/E1_96JV2_Percussion_Loops"
 
 live_loop :met do
   sleep 0.5

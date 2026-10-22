@@ -1,6 +1,7 @@
 # inspier https://youtu.be/herN5NmWtKM?si=yTdCFgA261Y7CMMQ&t=4088
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+clap = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 drum_play = 1
 splash_play = 1

@@ -1,11 +1,12 @@
 # output https://twitter.com/ikemura23/status/1606276581579558914
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 use_debug false
 use_bpm 65
 
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
-hat = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
-vox_sample = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/vox\ loops"
+clap = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+hat = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
+vox_sample = "#{sample_root}/LCC_CHELL_HOUSE/vox\ loops"
 
 ##| set_mixer_control! lpf: 130, lpf_slide: 4
 

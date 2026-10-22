@@ -1,8 +1,9 @@
 # output twitter: https://twitter.com/ikemura23/status/1702920577353437599
 # background movie: https://youtu.be/S9rUAaDd4B4?si=vipm484u8wUG_HMI
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
-bass_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/bass_loops"
-synth_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/synth_loops"
+bass_loop = "#{sample_root}/LCC_CHELL_HOUSE/bass_loops"
+synth_loop = "#{sample_root}/LCC_CHELL_HOUSE/synth_loops"
 
 use_debug false
 use_bpm 64

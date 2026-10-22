@@ -1,6 +1,8 @@
 # output https://twitter.com/ikemura23/status/1478878557166522369
-kick_snare = "/Users/k_ikemura/Music/sonic_pi/LCA_kick_snare\ loops"
-drum = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_drum\ loops\ full"
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
+
+kick_snare = "#{sample_root}/LCA_kick_snare\ loops"
+drum = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_drum\ loops\ full"
 
 live_loop :bd do
   sleep 0.5

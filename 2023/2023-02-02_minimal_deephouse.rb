@@ -1,10 +1,11 @@
 # output youtube https://youtu.be/WrfcHndL9XM
 # output twitter https://twitter.com/ikemura23/status/1621156968273707008
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 use_debug false
 use_bpm 55
 
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+clap = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 kick_flag = 0
 hat_flag = 0

@@ -1,9 +1,10 @@
 # CAPSULE - 空飛ぶ都市計画
 # https://youtu.be/ZezfpWmfacc?si=pnhoshDi0YTbrsNH&t=88
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 use_bpm 63
 
-claps = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+claps = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 live_loop :met do
   sleep 1

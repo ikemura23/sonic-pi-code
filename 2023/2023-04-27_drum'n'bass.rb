@@ -1,8 +1,9 @@
 # back movie https://www.youtube.com/watch?v=zowLNSKyfI0
 # output url https://twitter.com/ikemura23/status/1651528722451922944
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
-drum_loops = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_drum\ loops\ full"
-top_loops = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_top\ loops"
+drum_loops = "#{sample_root}/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_drum\ loops\ full"
+top_loops = "#{sample_root}/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_top\ loops"
 
 use_debug false
 use_bpm 75

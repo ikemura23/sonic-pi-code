@@ -1,10 +1,11 @@
 # original music: https://youtu.be/sjaNO0e1SL4?si=NwYeJfMSG9QxwRLL&t=410
 # output twitter: https://twitter.com/ikemura23/status/1706838062263918644
 # background movie: https://youtu.be/P-roMFezL3c?si=zfuk4WLDIRqd0oXc
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
-bass_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/bass_loops"
-synth_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/synth_loops"
-vox_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/vox loops"
+bass_loop = "#{sample_root}/LCC_CHELL_HOUSE/bass_loops"
+synth_loop = "#{sample_root}/LCC_CHELL_HOUSE/synth_loops"
+vox_loop = "#{sample_root}/LCC_CHELL_HOUSE/vox loops"
 
 use_debug false
 use_bpm 64

@@ -1,4 +1,5 @@
-##| drum = "/Users/k_ikemura/Music/sonic_pi/drum_slow"
+##| drum = "#{sample_root}/drum_slow"
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 cd = :a3
 

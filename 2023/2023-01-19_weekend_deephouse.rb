@@ -1,9 +1,10 @@
 # output https://twitter.com/ikemura23/status/1615724619880894465
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 use_debug false
 
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
-hat = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
+clap = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+hat = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
 
 kick_flag = 0
 hat_flag = 0

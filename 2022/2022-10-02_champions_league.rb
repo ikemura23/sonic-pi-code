@@ -1,12 +1,13 @@
 # https://twitter.com/ikemura23/status/1586512403382276098
 # https://twitter.com/ikemura23/status/1586847162083774464
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 use_debug false
 use_bpm 63
 
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
-hat = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
-percussion = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_percussion\ loops"
+clap = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+hat = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
+percussion = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_percussion\ loops"
 
 
 mero_flag = 1

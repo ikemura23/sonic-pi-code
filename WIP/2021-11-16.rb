@@ -1,5 +1,7 @@
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
+
 use_bpm 55 #50 60
-drum = "/Users/k_ikemura/Music/sonic_pi/LCA_drum loops"
+drum = "#{sample_root}/LCA_drum loops"
 
 live_loop :industry do
   number = 4 #4 12

@@ -1,7 +1,8 @@
 # output https://twitter.com/ikemura23/status/1618789316012158976
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
-drum_top_loop = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_top\ loops"
-synth_loop = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/synth_loops"
+drum_top_loop = "#{sample_root}/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_top\ loops"
+synth_loop = "#{sample_root}/LCC_CHELL_HOUSE/synth_loops"
 
 use_bpm 80
 

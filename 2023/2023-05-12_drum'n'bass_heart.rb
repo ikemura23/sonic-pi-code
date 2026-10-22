@@ -2,11 +2,12 @@
 # Title: Heart Racer 2
 # Output: https://twitter.com/ikemura23/status/1656864204463439873
 # Background Movie: https://www.youtube.com/watch?v=T6ixE2BZHeI
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
-hat_loops = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_hat\ loops"
+hat_loops = "#{sample_root}/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_hat\ loops"
 # loop download https://drive.google.com/drive/folders/1WIZ5uSMbAk14Kg90_tYgd0BN5otZCJZE?usp=share_link
 
-amen_brakes_loops = "/Users/k_ikemura/Music/sonic_pi/Amen\ Breaks\ Compilation/Amen\ Breaks\ Volume\ 1/WAV"
+amen_brakes_loops = "#{sample_root}/Amen\ Breaks\ Compilation/Amen\ Breaks\ Volume\ 1/WAV"
 # amen_brakes sample download https://rhythm-lab.com/amen_breaks/
 
 use_debug false

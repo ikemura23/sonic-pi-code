@@ -1,12 +1,13 @@
 # output https://twitter.com/ikemura23/status/1593244790308884481
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 use_debug false
 use_bpm 62
 
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
-hat = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
-hat_loops = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_hat\ loops"
-kick_loops = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_kicks"
+clap = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+hat = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_hats"
+hat_loops = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_hat\ loops"
+kick_loops = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_kicks"
   
 
 kick_hat_frag = 1

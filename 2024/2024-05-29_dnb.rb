@@ -1,12 +1,13 @@
 # 2024-05-29 Atmosphere dnb
 # Background Movie: https://kaiber.ai/share/be78930e-5aca-4283-b207-5094a5a5d7eb
 # Output: https://twitter.com/ikemura23/status/1795832995468980349
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
-drum_loops = "/Users/k_ikemura/Music/sonic_pi/96 JUNGLE - VOL.2/E1_96JV2_Drum_Breaks"
-percussion_loops = "/Users/k_ikemura/Music/sonic_pi/96 JUNGLE - VOL.2/E1_96JV2_Percussion_Loops"
-chord_loops = "/Users/k_ikemura/Music/sonic_pi/96 JUNGLE - VOL.2/E1_96JV2_Chord_Loops"
-bass_loops = "/Users/k_ikemura/Music/sonic_pi/96 JUNGLE - VOL.2/E1_96JV2_Bass_Loops"
-melodic_loops = "/Users/k_ikemura/Music/sonic_pi/96 JUNGLE - VOL.2/E1_96JV2_Melodic_Loops"
+drum_loops = "#{sample_root}/96 JUNGLE - VOL.2/E1_96JV2_Drum_Breaks"
+percussion_loops = "#{sample_root}/96 JUNGLE - VOL.2/E1_96JV2_Percussion_Loops"
+chord_loops = "#{sample_root}/96 JUNGLE - VOL.2/E1_96JV2_Chord_Loops"
+bass_loops = "#{sample_root}/96 JUNGLE - VOL.2/E1_96JV2_Bass_Loops"
+melodic_loops = "#{sample_root}/96 JUNGLE - VOL.2/E1_96JV2_Melodic_Loops"
 
 ##| use_bpm 68
 

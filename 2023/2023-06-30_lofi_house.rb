@@ -2,14 +2,15 @@
 # Original Song: https://music.youtube.com/watch?v=fEhSSy3Fosk&feature=share
 # Output Url: https://twitter.com/ikemura23/status/1674805398401069056
 # Background: https://youtu.be/uuRY0_kXksU?t=761
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 use_debug false
 use_bpm 62
 
-hat_loops = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/drum_loops/LCC_hat loops"
-clap_sample = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/one shots/LCC_Claps"
+hat_loops = "#{sample_root}/LCC_CHELL_HOUSE/drum_loops/LCC_hat loops"
+clap_sample = "#{sample_root}/LCC_CHELL_HOUSE/one shots/LCC_Claps"
 ## sample download => https://drive.google.com/drive/folders/18xkM3Zf1wxVIs80rdysJhy5HvkWPG73V?usp=drive_link
-stream = "/Users/k_ikemura/Music/sonic_pi/Nature"
+stream = "#{sample_root}/Nature"
 ## stream sound download => https://drive.google.com/file/d/1gWo7RA_ZyB6HS49f2aDU5CEbuVk5wqU9/view?usp=drive_link
 
 ## flag ######################

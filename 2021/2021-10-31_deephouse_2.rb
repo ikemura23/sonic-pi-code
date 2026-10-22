@@ -1,8 +1,9 @@
 # output https://twitter.com/ikemura23/status/1454828635886477319
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
-drum = "/Users/k_ikemura/Music/sonic_pi/LCA_kick_snare loops"
-drum2 = "/Users/k_ikemura/Music/sonic_pi"
-noise = "/Users/k_ikemura/Music/sonic_pi/LCCPTL_GRIME/LCCPTL_fx\ loops"
+drum = "#{sample_root}/LCA_kick_snare loops"
+drum2 = "#{sample_root}"
+noise = "#{sample_root}/LCCPTL_GRIME/LCCPTL_fx\ loops"
 use_bpm 75
 
 live_loop :kick do

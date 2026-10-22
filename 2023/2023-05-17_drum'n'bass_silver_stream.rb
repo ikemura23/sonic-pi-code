@@ -2,13 +2,14 @@
 # Title: Silver Stream
 # Background Movie: https://youtu.be/rzdspUDwzXU?t=376
 # Original Music https://youtu.be/TDIPGQWedvo
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 # Output
 #  Twitter https://twitter.com/ikemura23/status/1659004634831396864
 #  YouTube https://youtu.be/0odiIr8C5MM
 
-drum_loops = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_drum\ loops\ full"
-top_loops = "/Users/k_ikemura/Music/sonic_pi/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_top\ loops"
+drum_loops = "#{sample_root}/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_drum\ loops\ full"
+top_loops = "#{sample_root}/LCA_LIQUID_DNB/LCA_drum\ loops/LCA_top\ loops"
 
 use_debug false
 use_bpm 78

@@ -1,8 +1,10 @@
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
+
 use_bpm 75
 use_debug false
-drum = "/Users/k_ikemura/Music/sonic_pi/drum"
-noise = "/Users/k_ikemura/Music/sonic_pi/noise"
-voice = "/Users/k_ikemura/Music/sonic_pi/voice"
+drum = "#{sample_root}/drum"
+noise = "#{sample_root}/noise"
+voice = "#{sample_root}/voice"
 
 live_loop :bd do
   sample :bd_haus, amp: 1, lpf: 130

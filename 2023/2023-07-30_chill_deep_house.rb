@@ -1,13 +1,14 @@
 # original: https://soundcloud.com/tomvmusic2/when-we-love
 # Output: https://twitter.com/ikemura23/status/1686385503011287041
 # Background movie: https://youtu.be/3LwaixxDnLc
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 use_debug false
 use_bpm 60
 
-hat_loops = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/drum_loops/LCC_hat loops"
-clap_sample = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/one shots/LCC_Claps"
-stream = "/Users/k_ikemura/Music/sonic_pi/Nature"
+hat_loops = "#{sample_root}/LCC_CHELL_HOUSE/drum_loops/LCC_hat loops"
+clap_sample = "#{sample_root}/LCC_CHELL_HOUSE/one shots/LCC_Claps"
+stream = "#{sample_root}/Nature"
 
 # hat & clap sample download: https://drive.google.com/drive/folders/1q-jWGbVLQDNEw_-ecZyKIehe7vLWVgD-?usp=drive_link
 # stream sound download https://drive.google.com/drive/folders/1THJ5Vi4c9xTRrXcfx6WZmVvF4E55I5CY?usp=drive_link

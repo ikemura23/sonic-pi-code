@@ -1,13 +1,14 @@
 # original: https://soundcloud.com/tomvmusic2/when-we-love
 # Output:
 # Background movie:
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
 
 use_debug false
 use_bpm 62
 
-hat_loops = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/drum_loops/LCC_hat loops"
-clap_sample = "/Users/k_ikemura/Music/sonic_pi/LCC_CHELL_HOUSE/one shots/LCC_Claps"
-stream = "/Users/k_ikemura/Music/sonic_pi/Nature"
+hat_loops = "#{sample_root}/LCC_CHELL_HOUSE/drum_loops/LCC_hat loops"
+clap_sample = "#{sample_root}/LCC_CHELL_HOUSE/one shots/LCC_Claps"
+stream = "#{sample_root}/Nature"
 
 ## flag ######################
 

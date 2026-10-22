@@ -1,8 +1,10 @@
 #output https://twitter.com/ikemura23/status/1525140902078861312
+sample_root = Dir.home + "/Music/Sonic-Pi_Samples" # サンプル素材の置き場所
+
 use_bpm 70
 
-hatLoop="/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_hat\ loops"
-clap = "/Users/k_ikemura/Music/sonic_pi/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
+hatLoop="#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_drum\ loops/LCKK_hat\ loops"
+clap = "#{sample_root}/LCKK_SUNNY_HOUSE/LCKK_one\ shots/LCKK_claps"
 
 live_loop :kick do
   sleep 0.5
